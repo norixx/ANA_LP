@@ -1,0 +1,14 @@
+/* Sections */
+.ats-c-sect {
+  @apply py-16;
+  @apply md:py-24;
+}
+
+.ats-c-sect__header {
+  @apply text-center;
+}
+
+.ats-c-sect__h {
+  @apply text-lg font-bold;
+  @apply md:text-2xl;
+}

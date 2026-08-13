@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>モダンLP開発環境 | Vite + EJS + Tailwind CSS + Alpine.js</title>
+<meta name="description" content="Vite, EJS, Tailwind CSS, PostCSSを使用した、超高速かつモダンなレスポンシブLP開発テンプレートです。" />
+<!-- Google Fonts (Outfit & Inter) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/index-BaFvA9Ox.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C0FTcbHp.css">
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="text-xl font-bold font-outfit text-indigo-950 flex items-center gap-2">
+        <span class="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center">A</span>
+        ANA LP Template
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">特徴</a>
+        <a href="#tech-stack"
+          class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">技術構成</a>
+        <a href="https://github.com" target="_blank"
+          class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-indigo-200">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="test">
+    <h2 class="test__header">test head</h2>
+
+  </section>
+
+  <!-- Hero Section -->
+  <section class="lp-hero">
+    <div class="max-w-4xl mx-auto">
+      <span
+        class="inline-block bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs px-3 py-1.5 rounded-full font-semibold uppercase tracking-wider mb-6">
+        Next-Gen LP Starter
+      </span>
+      <h1 class="hero-title font-outfit">Vite + EJS + Tailwind + Alpine</h1>
+      <p class="hero-desc">
+        1枚物のランディングページ（LP）用のモダンテンプレート。EJSのパーツ管理と、Alpine.jsによるブラウザ上での超軽量・動的カード生成（API連携対応）を両立。
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#features"
+          class="px-8 py-3 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:bg-slate-100 transition-all duration-200">
+          詳細を見る
+        </a>
+        <a href="#tech-stack"
+          class="px-8 py-3 bg-transparent text-white font-semibold rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-200">
+          技術構成を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (Dynamic rendering via Alpine.js) -->
+  <section id="features" class="py-24 px-6 max-w-7xl mx-auto w-full">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl font-extrabold text-slate-900 mb-4 font-outfit">この環境で実現できること</h2>
+      <p class="text-slate-600">
+        クライアントサイド（ブラウザ）でAPIからデータを取得し、動的カードをロードする処理をスマートに表現します。
+      </p>
+    </div>
+
+    <!-- Alpine.js App -->
+    <div x-data="cardApp">
+      <!-- Loading Skeleton (Shown while cards are loading) -->
+      <div x-show="isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <template x-for="i in [1, 2, 3, 4]" :key="i">
+          <div class="border border-slate-100 rounded-2xl p-6 bg-white animate-pulse">
+            <div class="bg-slate-200 w-12 h-12 rounded-xl mb-4"></div>
+            <div class="h-6 bg-slate-200 rounded w-2/3 mb-3"></div>
+            <div class="h-4 bg-slate-200 rounded w-full mb-2"></div>
+            <div class="h-4 bg-slate-200 rounded w-5/6"></div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Real Cards Grid (Loaded from cards.json / Future API) -->
+      <div x-show="!isLoading" x-transition.opacity.duration.300ms
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style="display: none;">
+        <template x-for="card in cards" :key="card.id">
+          <div class="feature-card border border-slate-200 rounded-2xl p-6 bg-white transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:border-indigo-400 cursor-pointer flex flex-col justify-between group">
+  <div>
+    <div class="text-4xl mb-4 bg-indigo-50 w-12 h-12 flex items-center justify-center rounded-xl" x-text="card.icon"></div>
+    <h3 class="text-xl font-bold text-slate-800 mb-3 font-outfit" x-text="card.title"></h3>
+    <p class="text-slate-600 text-sm leading-relaxed" x-text="card.description"></p>
+  </div>
+  <div class="mt-6 flex items-center text-xs font-semibold text-indigo-600">
+    詳しく見る <span class="ml-1 transition-transform group-hover:translate-x-1">→</span>
+  </div>
+</div>
+
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Details -->
+  <section id="tech-stack" class="py-20 bg-slate-100 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-6 font-outfit">ビルドプロセスの最適化</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-800 mb-2">⚡ JS / CSS のミニファイ</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Vite内蔵の esbuild が不要なスペースや改行を全て削除し、劇的にサイズを縮小します。
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-800 mb-2">🖼️ 画像自動最適化 (Sharp)</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            `src/images/` に配置された画像は、ビルド時に自動でロスレス/不可逆圧縮され、ファイルサイズを削減します。
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200">
+          <h4 class="font-bold text-slate-800 mb-2">🚀 Alpine.js の動的出力</h4>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            APIデータを非同期で取得し、カードを瞬時に生成。ページの初期表示速度を落としません。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm">&copy; 2026 ANA LP Starter. All rights reserved.</p>
+      <div class="flex gap-6 text-sm">
+        <a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a>
+        <a href="#" class="hover:text-white transition-colors">利用規約</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Entry -->
+</body>
+
+</html>

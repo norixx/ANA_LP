@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <%- include('./src/ejs/_head.ejs') %>
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+  <div class="lp-ats">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="text-xl font-bold font-outfit text-indigo-950 flex items-center gap-2">
+          <span class="bg-indigo-600 text-white w-8 h-8 rounded-lg flex items-center justify-center">A</span>
+          ANA LP Template
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">特徴</a>
+          <a href="#tech-stack"
+            class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">技術構成</a>
+          <a href="https://github.com" target="_blank"
+            class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-indigo-200">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="test">
+      <h2 class="test__header">test head</h2>
+
+    </section>
+
+    <div class="ats-mv">
+      <div class="ats-l-container">
+
+      </div>
+    </div>
+
+    <section class="ats-c-sect ats-nav-sales">
+      <header class="ats-c-sect__header">
+        <h2 class="ats-c-sect__h">その他のセールも実施中！</h2>
+      </header>
+      <div class="ats-c-sect__body">
+
+      </div>
+    </section>
+
+    <section class="ats-c-sect ats-overview">
+      <div class="ats-l-container">
+        <div class="ats-overview__grid">
+          <h2 class="ats-overview__h">ANAタイムセールで、
+            旅先の楽しみをもっと。</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="ats-c-sect ats-points">
+      <header class="ats-c-sect__header">
+        <h2 class="ats-c-sect__h">はじめてでも迷わない、ANAタイムセールのポイント</h2>
+        <p class="ats-c-sect__lead">賢く、おトクに、安心してタイムセールで航空券予約を</p>
+      </header>
+      <div class="ats-c-sect__body">
+
+      </div>
+    </section>
+
+    <div class="ats-plans">
+      <div class="ats-l-container">
+        <section class="ats-c-subsect ats-popular">
+          <h2 class="ats-c-subsect__h">人気のセール路線・運賃</h2>
+        </section>
+        <section class="ats-c-subsect ats-recom">
+          <h2 class="ats-c-subsect__h">ANAオススメセール路線</h2>
+        </section>
+        <section class="ats-c-subsect ats-island">
+          <h2 class="ats-c-subsect__h">日常を離れる、島旅へ</h2>
+        </section>
+      </div>
+    </div>
+
+    <section class="ats-c-sect ats-faq">
+      <header class="ats-c-sect__header">
+        <h2 class="ats-c-sect__h">タイムセールでよくある質問</h2>
+        <p class="ats-c-sect__lead">予約前の疑問を解消</p>
+      </header>
+      <div class="ats-c-sect__body">
+        <dl class="ats-faq__list">
+          <div class="ats-faq__item">
+            <dt class="ats-faq__question">タイムセールの搭乗期間はいつですか？ <button type="button" class="js-ats-faq-toggle"></button>
+            </dt>
+            <dd class="ats-faq__answer">
+              タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+
+    <section class="ats-c-sect">
+      <div class="ats-l-container">
+        <header class="ats-c-sect__header">
+          <h2 class="ats-c-sect__h">ご予約前の確認事項</h2>
+          <p class="ats-c-sect__lead">条件を確認して、ご予約ください</p>
+        </header>
+        <div class="ats-c-sect__body">
+          <div class="grid grid-cols-12 gap-4">
+            <div class="col-start-1 col-span-12 md:col-start-3 md:col-span-8">
+              モバイルでは全幅、md以上で中央8列分
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="lp-hero">
+      <div class="max-w-4xl mx-auto">
+        <span
+          class="inline-block bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs px-3 py-1.5 rounded-full font-semibold uppercase tracking-wider mb-6">
+          Next-Gen LP Starter
+        </span>
+        <h1 class="hero-title font-outfit">Vite + EJS + Tailwind + Alpine</h1>
+        <p class="hero-desc">
+          1枚物のランディングページ（LP）用のモダンテンプレート。EJSのパーツ管理と、Alpine.jsによるブラウザ上での超軽量・動的カード生成（API連携対応）を両立。
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#features"
+            class="px-8 py-3 bg-white text-slate-900 font-semibold rounded-xl shadow-lg hover:bg-slate-100 transition-all duration-200">
+            詳細を見る
+          </a>
+          <a href="#tech-stack"
+            class="px-8 py-3 bg-transparent text-white font-semibold rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-200">
+            技術構成を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section (Dynamic rendering via Alpine.js) -->
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto w-full">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-extrabold text-slate-900 mb-4 font-outfit">この環境で実現できること</h2>
+        <p class="text-slate-600">
+          クライアントサイド（ブラウザ）でAPIからデータを取得し、動的カードをロードする処理をスマートに表現します。
+        </p>
+      </div>
+
+      <!-- Alpine.js App -->
+      <div x-data="cardApp">
+        <!-- Loading Skeleton (Shown while cards are loading) -->
+        <div x-show="isLoading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <template x-for="i in [1, 2, 3, 4]" :key="i">
+            <div class="border border-slate-100 rounded-2xl p-6 bg-white animate-pulse">
+              <div class="bg-slate-200 w-12 h-12 rounded-xl mb-4"></div>
+              <div class="h-6 bg-slate-200 rounded w-2/3 mb-3"></div>
+              <div class="h-4 bg-slate-200 rounded w-full mb-2"></div>
+              <div class="h-4 bg-slate-200 rounded w-5/6"></div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Real Cards Grid (Loaded from cards.json / Future API) -->
+        <div x-show="!isLoading" x-transition.opacity.duration.300ms
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style="display: none;">
+          <template x-for="card in cards" :key="card.id">
+            <%- include('./src/ejs/_card.ejs') %>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Details -->
+    <section id="tech-stack" class="py-20 bg-slate-100 px-6">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-6 font-outfit">ビルドプロセスの最適化</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2">⚡ JS / CSS のミニファイ</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Vite内蔵の esbuild が不要なスペースや改行を全て削除し、劇的にサイズを縮小します。
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2">🖼️ 画像自動最適化 (Sharp)</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              `src/images/` に配置された画像は、ビルド時に自動でロスレス/不可逆圧縮され、ファイルサイズを削減します。
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-2xl border border-slate-200">
+            <h4 class="font-bold text-slate-800 mb-2">🚀 Alpine.js の動的出力</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              APIデータを非同期で取得し、カードを瞬時に生成。ページの初期表示速度を落としません。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800 text-center">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-sm">&copy; 2026 ANA LP Starter. All rights reserved.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a>
+          <a href="#" class="hover:text-white transition-colors">利用規約</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript Entry -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>

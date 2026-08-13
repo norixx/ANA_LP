@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./theme/_theme.css";
+@import './settings/_variables.css';
+
+/* utilitiesはTailwindのlayer */
+@layer components, projects, utilities;
+
+@import './components/_index.css';
+@import './projects/_index.css';
+
+/* テスト用カスタムCSS（PostCSSネスト機能の確認用） */
+.lp-hero {
+  @apply relative overflow-hidden bg-gradient-to-tr from-indigo-800 via-slate-900 to-indigo-950 text-white py-24 px-6 text-center;
+
+  &::before {
+    content: "";
+    @apply absolute inset-0 opacity-10 from-blue-400 via-indigo-500 to-purple-600 pointer-events-none;
+    background-image: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+
+  .hero-title {
+    @apply text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-indigo-100;
+  }
+
+  .hero-desc {
+    @apply text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed;
+  }
+}

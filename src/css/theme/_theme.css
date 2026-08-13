@@ -1,0 +1,18 @@
+/* 独自の値をTailwindのユーティリティクラスとして使えるようにする */
+/* Oswald(見出し英数字用) */
+@import '@fontsource/oswald/400.css';
+@import '@fontsource/oswald/700.css';
+
+/* Noto Sans JP(本文用) */
+@import '@fontsource/noto-sans-jp/400.css';
+@import '@fontsource/noto-sans-jp/700.css';
+
+/* Zen Kaku Gothic New(見出し和文用) */
+@import '@fontsource/zen-kaku-gothic-new/400.css';
+@import '@fontsource/zen-kaku-gothic-new/700.css';
+
+@theme {
+  --font-en: "Oswald", "Noto Sans JP", sans-serif;
+  --font-ja: "Noto Sans JP", sans-serif;
+  --font-ja-alt: "Zen Kaku Gothic New", sans-serif;
+}
