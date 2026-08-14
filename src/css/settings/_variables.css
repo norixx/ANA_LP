@@ -1,7 +1,10 @@
 /* Settings */
 :root {
 
-  /* Primitives */
+  /* Primitives ============================== */
+  --corporate: 229 100 22;
+  --yellow: 55 100 50;
+
   --Indigo-50: 216 100 98;
   --Indigo-100: 215 94 93;
   --Indigo-200: 217 93 88;
@@ -188,5 +191,32 @@
   --Mono-1300: 0 0 0;
 
 
-  /* Semantics */
+  /* Semantics ============================== */
+  /* Text */
+  --text-main: var(--Mono-1200);
+  --text-link: var(--corporate);
+  --text-accent: var(--corporate);
+  --text-white: var(--Mono-0);
+  /* --text-accent-alt: hsl(); */
+
+  /* Background */
+  --bg-accent: var(--corporate);
+  --bg-accent-yellow: var(--yellow);
+  --bg-white: var(--Mono-0);
+
+  /* Border Radius */
+  --radius-100: 999rem;
+
+  /* Line Height */
+  --lh-normal: 1.5;
+  --lh-lg: 1.8;
+  --lh-full: 2;
+  --lh-sm: 1.2;
+
+  /* Font Size */
+  --fz-normal: 1rem;
+  --fz-sm: .875rem;
+  --fz-xs: .75rem;
+  --fz-md: 1.2rem;
+  --fz-lg: 1.5rem;
 }

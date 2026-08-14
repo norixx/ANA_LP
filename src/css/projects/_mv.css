@@ -1,5 +1,90 @@
-.test__header {
+.ats-mv {
+  background: url(../../img/mv.webp) no-repeat 90% center / cover;
+}
+
+.ats-mv__container {
+  max-width: 1000px;
+  min-height: 500px;
+  margin-inline: auto;
+}
+
+
+
+.ats-mv__sale-period {
+  background: hsl(var(--bg-accent-yellow));
+  border-radius: var(--radius-100);
+  display: flex;
+  padding: 6px 20px;
+  align-items: center;
+  line-height: 1;
+}
+
+.ats-mv__sale-period dt {
+  font-weight: bold;
+  display: flex;
+}
+
+.ats-mv__sale-period dd {
+  display: flex;
+  flex: 1;
+  column-gap: 10px;
+  text-align: center;
+  font-family: var(--font-ja-alt);
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.ats-mv__sale-period dd::before {
+  content: '';
+  width: 1px;
+  background: hsl(var(--bg-accent));
+}
+
+.ats-mv__sale-date {
+  flex: 1;
+}
+
+.ats-mv__sale-date-num {
+  font-size: 1.75rem;
+}
+
+/* カウントダウン */
+.ats-mv__sale-countdown {
+  background: hsla(var(--bg-accent)/.6);
+  padding: .5rem 1rem 1rem 1rem;
+}
+
+.ats-mv__sale-countdown dt {
+  text-align: center;
+  color: hsl(var(--text-white));
   font-weight: bold;
 }
 
-.ats-mv {}
+.ats-mv__sale-countdown dd {
+  gap: 1px;
+}
+
+.ats-mv__sale-countdown-box {
+  background: hsl(var(--bg-white));
+  padding-block: .875rem;
+  display: grid;
+  gap: .5rem;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: auto auto;
+  color: hsl(var(--text-accent));
+}
+
+.ats-mv__sale-countdown dd>div:first-of-type .ats-mv__sale-countdown-box {
+  border-radius: .5rem 0 0 .5rem;
+}
+
+.ats-mv__sale-countdown dd>div:last-of-type .ats-mv__sale-countdown-box {
+  border-radius: 0 .5rem .5rem 0;
+}
+
+.ats-mv__sale-countdown-num {
+  font-family: var(--font-en);
+  font-size: 3rem;
+  /*48px*/
+}

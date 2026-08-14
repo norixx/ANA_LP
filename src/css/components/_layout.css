@@ -3,3 +3,8 @@
 
   @apply mx-auto px-4 md:px-6 xl:px-0;
 }
+
+.ats-l-container--1080 {
+  max-width: 1080px;
+  @apply mx-auto px-4 md:px-6 xl:px-0;
+}

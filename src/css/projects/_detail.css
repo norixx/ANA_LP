@@ -1,0 +1,19 @@
+.ats-detail {}
+
+.ats-detail__h {
+  @apply font-ja-alt;
+  color: var(--text-accent);
+  font-weight: bold;
+  /*
+  傾き(vw) = (フォント最大px - フォント最小px) / (画面最大幅px - 画面最小幅px) * 100
+        = (56 - 28) / (1440 - 375) * 100
+        ≒ 2.628vw
+
+切片(rem) = フォント最小px - (傾き * 画面最小幅px / 100)
+         = 28 - (2.628 * 375 / 100)
+         ≒ 18.1px ≒ 1.13rem
+
+         clamp(1.75rem, 3vw + 1rem, 3.5rem);
+  */
+  font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
+}

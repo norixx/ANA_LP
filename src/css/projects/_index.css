@@ -1,2 +1,3 @@
 @import './_base.css' layer(projects);
 @import './_mv.css' layer(projects);
+@import './_detail.css' layer(projects);
