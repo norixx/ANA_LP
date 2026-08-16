@@ -1,9 +1,18 @@
 /* Settings */
 :root {
+  /* アニメーション設定 */
+  interpolate-size: allow-keywords;
 
   /* Primitives ============================== */
   --corporate: 229 100 22;
   --yellow: 55 100 50;
+  --orange: 22 99 49;
+  --orange-dark: 12 100 44;
+  --pale-blue: 207 64 95;
+  --light-blue: 203 91 87;
+  --light-blue-dark: 203 100 83;
+  --blue: 201 100 43;
+  --blue-dark: 212 100 42;
 
   --Indigo-50: 216 100 98;
   --Indigo-100: 215 94 93;
@@ -202,7 +211,20 @@
   /* Background */
   --bg-accent: var(--corporate);
   --bg-accent-yellow: var(--yellow);
+  --bg-accent-orange: var(--orange);
+  --bg-accent-orange-dark: var(--orange-dark);
+  --bg-pale-blue: var(--pale-blue);
+  --bg-light-blue-light: var(--Blue-100);
+  --bg-light-blue: var(--Blue-200);
+  --bg-light-blue-alt: var(--light-blue);
+  --bg-light-blue-alt-dark: var(--light-blue-dark);
   --bg-white: var(--Mono-0);
+  --bg-black: var(--Mono-1300);
+
+  /* Border Color */
+  --bdr-light: var(--Mono-300);
+  --bdr-normal: var(--Mono-600);
+  --bdr-black: var(--Mono-1300);
 
   /* Border Radius */
   --radius-100: 999rem;

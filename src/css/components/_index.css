@@ -1,2 +1,4 @@
 @import './_layout.css' layer(components);
 @import './_sections.css' layer(components);
+@import './_buttons.css' layer(components);
+@import './_icons.css' layer(components);

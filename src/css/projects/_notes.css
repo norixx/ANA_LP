@@ -1,0 +1,37 @@
+/* ご予約前の確認事項 */
+
+.ats-notes {
+  background: hsl(204, 45%, 98%);
+}
+
+.ats-notes__subsect {}
+
+.ats-notes__subsect-h {
+  font-weight: bold;
+  font-size: 1.125rem;
+  padding-bottom: .5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid hsl(var(--bdr-black));
+}
+
+.ats-notes__period-list {
+  font-weight: bold;
+  font-size: 1.125rem;
+  list-style: disc;
+  margin-inline-start: 1.5em;
+  margin-block-end: 0.75rem;
+}
+
+.ats-notes__period-note {
+  margin-inline-start: 1.5rem;
+}
+
+.ats-notes__sublist {
+  margin-inline-start: 1.5rem;
+  list-style: disc;
+}
+
+.ats-notes__sublist a {
+  font-weight: bold;
+  text-decoration: underline;
+}

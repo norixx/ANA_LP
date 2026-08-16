@@ -1,0 +1,69 @@
+.ats-c-btn {
+  border-radius: var(--radius-100);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: var(--fz-normal);
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  color: hsl(var(--text-white));
+  text-align: center;
+  gap: .5rem;
+  box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
+}
+
+/* Style(color) */
+.ats-c-btn.--normal {
+  background: hsl(var(--bg-accent));
+}
+
+.ats-c-btn.--accent-orange {
+  background: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
+}
+
+/* Size */
+.ats-c-btn.--lg {
+  padding: 1rem 1.5rem;
+}
+
+.ats-c-btn.--w-full {
+  width: 100%;
+}
+
+/* Child */
+.ats-c-btn__content-fill {
+  flex: 1;
+}
+
+/* Icon */
+.ats-c-btn.--icon {
+  gap: .5rem;
+
+  /* Icons: refer to _icons.css */
+}
+
+.ats-c-btn.--icon::before,
+.ats-c-btn.--icon::after {
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: cover;
+}
+
+.ats-c-btn.--icon-l::before {
+  content: '';
+}
+
+.ats-c-btn.--icon-r::after {
+  content: '👇️';
+}
+
+.ats-c-btn.--icon-arrow-down::after {
+  content: '';
+
+}

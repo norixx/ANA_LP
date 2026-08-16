@@ -66,10 +66,17 @@
             </dl>
           </div>
           <div class="col-span-12 lg:col-span-6">
-            <dl class="ats-mv__boarding-period">
-              <dt>搭乗期間：2026/6/12（月）〜7/12（月）</dt>
-              <dd>
-                <div class="ats-mv__boarding-plan">
+            <div class="ats-mv__boarding-period">
+              <dl class="ats-mv__boarding-period-title">
+                <dt>搭乗期間</dt>
+                <dd>
+                  2026/<span class="ats-mv__boarding-period-date">6</span>/<span
+                    class="ats-mv__boarding-period-date">12</span>［月］〜 <span
+                    class="ats-mv__boarding-period-date">7</span>/<span
+                    class="ats-mv__boarding-period-date">12</span>［月］</dd>
+              </dl>
+              <div class="ats-mv__boarding-plan">
+                <div class="ats-mv__boarding-section">
                   <div class="ats-mv__boarding-depart">
                     <span class="ats-mv__boarding-area">東京</span>
                     <span class="ats-mv__boarding-airport">羽田</span>
@@ -84,23 +91,37 @@
                   <span class="ats-mv__boarding-price-num">20,460</span>
                   <span class="ats-mv__boarding-price-label">円～</span>
                 </div>
-              </dd>
-              <dd>
-                <p class="ats-mv__boarding-price-base">
-                  <span class="ats-mv__boarding-price-base-num">11,670</span>
-                  <span class="ats-mv__boarding-price-base-label">円～</span>
-                </p>
-              </dd>
-              <dd><a href="#" class="ats-c-btn">
+              </div>
+              <div class="ats-mv__boarding-plan">
+                <div class="ats-mv__boarding-section">
+                  <div class="ats-mv__boarding-depart">
+                    <span class="ats-mv__boarding-area">東京</span>
+                    <span class="ats-mv__boarding-airport">羽田</span>
+                  </div>
+                  <div class="ats-mv__boarding-arrow"></div>
+                  <div class="ats-mv__boarding-arrive">
+                    <span class="ats-mv__boarding-area">沖縄</span>
+                    <span class="ats-mv__boarding-airport">那覇</span>
+                  </div>
+                </div>
+                <div class="ats-mv__boarding-price">
+                  <span class="ats-mv__boarding-price-num">20,460</span>
+                  <span class="ats-mv__boarding-price-label">円～</span>
+                </div>
+              </div>
+
+              <div class="ats-mv__boarding-price-cta mt-4">
+                <a href="#" class="ats-c-btn --accent-orange --lg --w-full --icon --icon-arrow-down">
                   <span class="ats-c-btn__content-fill">その他の路線・詳細はこちら</span>
-                </a></dd>
-            </dl>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <section class="ats-c-sect ats-nav-sales">
+    <section class="ats-c-sect ats-nav-sales py-12">
       <header class="ats-c-sect__header">
         <h2 class="ats-c-sect__h">その他のセールも実施中！</h2>
       </header>
@@ -142,26 +163,33 @@
       </div>
     </div>
 
-    <section class="ats-c-sect ats-faq">
-      <header class="ats-c-sect__header">
-        <h2 class="ats-c-sect__h">タイムセールでよくある質問</h2>
-        <p class="ats-c-sect__lead">予約前の疑問を解消</p>
-      </header>
-      <div class="ats-c-sect__body">
-        <dl class="ats-faq__list">
-          <div class="ats-faq__item">
-            <dt class="ats-faq__question">タイムセールの搭乗期間はいつですか？ <button type="button" class="js-ats-faq-toggle"></button>
-            </dt>
-            <dd class="ats-faq__answer">
-              タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
-            </dd>
+    <section class="ats-c-sect ats-faq py-12 md:py-16">
+      <div class="ats-l-container">
+        <header class="ats-c-sect__header">
+          <h2 class="ats-c-sect__h">タイムセールでよくある質問</h2>
+          <p class="ats-c-sect__lead">予約前の疑問を解消</p>
+        </header>
+        <div class="ats-c-sect__body">
+          <div class="flex justify-center">
+            <div class="w-full md:w-11/12">
+              <dl class="ats-faq__list">
+                <div class="ats-faq__item">
+                  <dt class="ats-faq__q">
+                    <span class="ats-faq__q-text">タイムセールの搭乗期間はいつですか？</span>
+                    <button type="button" class="js-ats-faq-toggle"></button>
+                  </dt>
+                  <dd class="ats-faq__a">
+                    タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+                  </dd>
+                </div>
+              </dl>
+            </div>
           </div>
-        </dl>
+        </div>
       </div>
     </section>
 
-
-    <section class="ats-c-sect ats-notes">
+    <section class="ats-c-sect ats-notes py-12 md:py-16">
       <div class="ats-l-container">
         <header class="ats-c-sect__header">
           <h2 class="ats-c-sect__h">ご予約前の確認事項</h2>
@@ -170,14 +198,84 @@
         <div class="ats-c-sect__body">
           <div class="grid grid-cols-12 gap-4">
             <div class="col-start-1 col-span-12 md:col-start-3 md:col-span-8">
-              モバイルでは全幅、md以上で中央8列分
+              <section class="ats-notes__subsect">
+                <h3 class="ats-notes__subsect-h">対象期間</h3>
+                <div class="ats-notes__subsect-body ats-notes__period">
+                  <ul class="ats-notes__period-list">
+                    <li>
+                      販売期間：2026/5/12（月）00:00〜23:59
+                    </li>
+                    <li>
+                      搭乗期間：2026/6/12（月）〜7/12（月）
+                    </li>
+                  </ul>
+
+                  <p class="ats-notes__period-note">販売期間と搭乗期間の違いにご注意ください</p>
+                </div>
+              </section>
+              <section class="ats-notes__subsect mt-9">
+                <h3 class="ats-notes__subsect-h">タイムセール概要</h3>
+                <div class="ats-notes__subsect-body ats-notes__period">
+                  <ul class="ats-notes__period-list">
+                    <li>
+                      販売期間： 2026年1月14日（水）0:00～2026年1月15日（木）23:59
+                    </li>
+                    <li>
+                      搭乗期間： 2026年5月19日（火）～2026年6月30日（火）
+                    </li>
+                  </ul>
+
+                  <ul class="ats-notes__sublist">
+                    <li>期間・路線・便限定のため、販売席数には限りがあります。</li>
+                    <li>対象便や運賃額は期間・曜日により異なる場合があります。ご希望日の空席照会結果よりご確認ください。</li>
+                    <li>セール運賃はANA ウェブサイト専用運賃です。ANA ウェブサイトにてご購入ください。</li>
+                    <li>
+                      セール運賃は販売期間（2026年1月14日（水）0:00～2026年1月15日（木）23:59）外に検索・空席照会には表示されません。また販売期間内にご購入までお済ませいただいた場合に限り適用されます。
+                    </li>
+                    <li>
+                      販売開始までにANAウェブサイトでのログイン方法について、パスワードなど必要事項の確認をお願いいたします。パスワードについてご不明な方は「ログインでお困りの方」をご確認ください。ログインできない場合は、ご予約時に「会員ログインせず次へ」からお進みいただき、お客様情報入力欄にてANAマイレージクラブお客様番号をご登録いただけます。
+                    </li>
+                    <li>
+                      運航ダイヤ確定前に販売を開始いたします。運航ダイヤ確定時にご予約便の運休または発着時刻、便名、機種、機材、運航会社・座席番号に変更が発生する場合がございます。発着時間の変更により旅程が不成立となる場合は、ANA便への変更または払い戻しを承ります。
+
+                      <em class="ats-c-text--caution">運航ダイヤ確定後に再度ご予約内容をご確認いただきますようお願いいたします。</em>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+              <section class="ats-notes__subsect mt-9">
+                <h3 class="ats-notes__subsect-h">セール運賃に関するご注意</h3>
+                <div class="ats-notes__subsect-body">
+                  <ul class="ats-notes__sublist">
+                    <li>2026年5月19日以降搭乗分の国内線は、複数名でのANA SKY コインご利用に一部制限が発生しております。詳細は(国内線・国際線) ANA
+                      SKYコインのご利用についてをご覧ください。ご迷惑をおかけすることをお詫び申し上げます。</li>
+                    <li>お客様のご旅程により、コンビニ支払いをご利用いただけない場合があります。詳細はコンビニエンスストアでのお支払いからご確認ください。</li>
+                    <li>運賃額は予告なしに変更になる場合があります。</li>
+                    <li>
+                      運賃額は、ご購入手続き時点で有効な金額が適用されます。航空券ご購入後にご利用便の運賃額に変更があった場合、差額の収受または払い戻しは行いません。詳しくは「<a href="#"
+                        target="_blank">運賃計算ルールについて</a>」をご覧ください。
+                    </li>
+                    <li>運賃適用基準日は2026年1月14日（水）です。購入日によっては、運賃額の記載例と異なる場合があります。</li>
+                    <li>往復運賃は原則、往路・復路を同時に購入いただく時に適用されます。</li>
+                    <li>満2歳以上12歳未満のお子様がご購入する場合、「<a href="#" target="_blank">小児割引</a>」を適用します。</li>
+                    <li>以下の手帳をお持ちのお客様は「<a href="#" target="_blank">障がい者割引</a>」を適用します。 身体障害者手帳、戦傷病者手帳、療育手帳、精神障害者保健福祉手帳
+                    </li>
+                    <li>セール運賃は購入後の変更はできません。搭乗当日、出発空港においてご予約便より前の便に空席があった場合でも変更は承れません。</li>
+                    <li>払い戻し時に適用される「<a href="#" target="_blank">取消手数料</a>」は航空券の使用状態によって異なります。詳しくは「<a href="#"
+                        target="_blank">国内線の変更払い戻しのルール</a>」をご確認ください。</li>
+                    <li>すでに別の運賃で航空券を購入済みの場合は、所定の手数料を頂戴し払い戻しのうえ、あらためて予約、購入いただく必要があります。払い戻し額とセール運賃額との差額をご確認のうえご検討ください。
+                    </li>
+                    <li>運賃の他に対象空港発着便利用時のみ「<a href="#" target="_blank">旅客施設使用料</a>」を申し受けます。</li>
+                  </ul>
+                </div>
+              </section>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="ats-c-sect ats-vacant-inq">
+    <section class="ats-c-sect ats-vacant-inq py-6 md:py-16">
       <div class="ats-l-container">
         <header class="ats-c-sect__header">
           <h2 class="ats-c-sect__h">空席照会で、対象運賃を確認</h2>
@@ -189,8 +287,7 @@
       </div>
     </section>
 
-
-    <section class="ats-c-sect ats-detail">
+    <section class="ats-c-sect ats-detail pt-24 pb-20 md:py-24">
       <div class="ats-l-container">
         <header class="ats-detail__header">
           <h2 class="ats-detail__h text-center">ANAタイムセールで、<br>
@@ -208,7 +305,7 @@
       </div>
     </section>
 
-    <section class="ats-c-sect ats-related">
+    <section class="ats-c-sect ats-related py-12 md:py-16">
       <div class="ats-l-container--1080">
         <div class="ats-c-sect__header">
           <h2 class="ats-c-sect__h">関連情報</h2>

@@ -1,0 +1,56 @@
+.ats-faq {
+  background: hsl(203 91 87);
+}
+
+.ats-faq__list {
+  display: grid;
+  gap: .5rem;
+}
+
+.ats-faq__item {
+  background: hsl(var(--bg-white));
+  padding: 1rem;
+  border-radius: .5rem;
+}
+
+.ats-faq__q {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.ats-faq__q-text {
+  display: flex;
+  gap: .5rem;
+}
+
+.ats-faq__q-text::before,
+.ats-faq__a::before {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-100);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.ats-faq__q-text::before {
+  content: 'Q';
+  background-color: hsl(var(--bg-accent));
+  color: hsl(var(--text-white));
+  display: grid;
+  place-items: center;
+}
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-faq__q {
+    font-size: 1.125rem;
+  }
+
+  .ats-faq__q::before,
+  .ats-faq__a::before {
+    width: 36px;
+    height: 36px;
+  }
+}

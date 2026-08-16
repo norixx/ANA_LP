@@ -1,3 +1,11 @@
 @import './_base.css' layer(projects);
 @import './_mv.css' layer(projects);
 @import './_detail.css' layer(projects);
+@import './_sales.css' layer(projects);
+@import './_overview.css' layer(projects);
+@import './_points.css' layer(projects);
+@import './_plans.css' layer(projects);
+@import './_faq.css' layer(projects);
+@import './_notes.css' layer(projects);
+@import './_vacant-inq.css' layer(projects);
+@import './_related.css' layer(projects);

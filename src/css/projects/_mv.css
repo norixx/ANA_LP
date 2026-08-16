@@ -1,11 +1,13 @@
 .ats-mv {
   background: url(../../img/mv.webp) no-repeat 90% center / cover;
+  padding-block: 3.5rem;
 }
 
 .ats-mv__container {
   max-width: 1000px;
-  min-height: 500px;
   margin-inline: auto;
+  display: grid;
+  align-content: center;
 }
 
 
@@ -87,4 +89,128 @@
   font-family: var(--font-en);
   font-size: 3rem;
   /*48px*/
+}
+
+.ats-mv__sale-countdown-label {
+  writing-mode: vertical-rl;
+}
+
+
+
+/* 搭乗期間 */
+.ats-mv__boarding-period {
+  background: hsla(var(--bg-white)/.9);
+  border-radius: 20px;
+  padding: 1rem;
+  color: hsl(var(--text-accent));
+}
+
+.ats-mv__boarding-period-title {
+  padding-bottom: .625rem;
+  border-bottom: 1px solid hsl(var(--bg-accent));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.ats-mv__boarding-period-title dd {
+  font-size: 1.25rem;
+  font-family: var(--font-ja-alt);
+  line-height: 1;
+}
+
+.ats-mv__boarding-period-date {
+  font-size: 2rem;
+}
+
+.ats-mv__boarding-plan {
+  display: flex;
+  justify-content: space-between;
+  padding: .75rem 0.625rem;
+  line-height: 1;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.ats-mv__boarding-section {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  border: 1px solid hsl(var(--bdr-normal));
+  padding-block: .5rem;
+}
+
+.ats-mv__boarding-depart,
+.ats-mv__boarding-arrive {
+  display: flex;
+  gap: .5rem;
+  align-items: end;
+}
+
+.ats-mv__boarding-area {
+  font-size: 0.8125rem;
+}
+
+.ats-mv__boarding-airport {
+  font-weight: bold;
+  font-size: 1.13125rem;
+}
+
+.ats-mv__boarding-price {
+  text-align: center;
+}
+
+.ats-mv__boarding-price-num {
+  font-family: var(--font-en);
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.ats-mv__boarding-price-label {
+  font-weight: bold;
+}
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-mv__sale-countdown-num {
+    font-size: 3.5rem;
+  }
+
+  .ats-mv__boarding-period {
+    padding: 1.875rem;
+  }
+
+  .ats-mv__boarding-period-title {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .ats-mv__boarding-period-title dt::after {
+    content: '：';
+  }
+
+  .ats-mv__boarding-period-title dd {
+    font-size: 1rem;
+    font-family: var(--font-ja);
+    flex: 1;
+  }
+
+  .ats-mv__boarding-period-date {
+    font-size: 1rem;
+  }
+
+  .ats-mv__boarding-plan {
+    flex-direction: row;
+    align-items: end;
+    gap: 0;
+  }
+
+  .ats-mv__boarding-section {
+    align-items: end;
+    border: none;
+    padding: 0;
+  }
 }

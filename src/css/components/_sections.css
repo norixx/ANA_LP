@@ -1,14 +1,16 @@
 /* Sections */
 .ats-c-sect {
-  @apply py-16;
-  @apply md:py-24;
+  /* @apply py-16;
+  @apply md:py-24; */
 }
 
 .ats-c-sect__header {
-  @apply text-center;
+  @apply text-center mb-6;
 }
 
 .ats-c-sect__h {
-  @apply text-lg font-bold;
-  @apply md:text-2xl;
+  @apply text-2xl font-bold mb-3;
+  @apply md:text-4xl md:mb-6;
 }
+
+.ats-c-sect__body {}
