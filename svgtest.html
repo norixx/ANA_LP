@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --icon-detail-display: none;
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --icon-detail-display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SVG sprite -->
+  <svg class="ats-overview__points-icon">
+    <use href="./public/assets/img/icons.svg#ats-overview__choice" />
+  </svg>
+</body>
+
+</html>

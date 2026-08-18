@@ -4,13 +4,10 @@
 }
 
 .ats-mv__container {
-  max-width: 1000px;
-  margin-inline: auto;
-  display: grid;
-  align-content: center;
+  max-width: 600px;
 
-  @apply px-4 grid-cols-12 gap-y-14 items-center;
-  @apply md:gap-x-16 xl:px-0;
+  @apply grid content-center px-4 grid-cols-12 gap-y-14 items-center mx-auto;
+  @apply lg:gap-x-16 xl:px-0;
 }
 
 .ats-mv__container-col {
@@ -45,7 +42,7 @@
 .ats-mv__sale-period dd::before {
   content: '';
   width: 1px;
-  background: hsl(var(--bg-accent));
+  background: hsl(var(--bg-primary));
 }
 
 .ats-mv__sale-date {
@@ -58,7 +55,7 @@
 
 /* カウントダウン */
 .ats-mv__sale-countdown {
-  background: hsla(var(--bg-accent)/.6);
+  background: hsla(var(--bg-primary)/.6);
   padding: .5rem 1rem 1rem 1rem;
 }
 
@@ -113,7 +110,7 @@
 
 .ats-mv__boarding-period-title {
   padding-bottom: .625rem;
-  border-bottom: 1px solid hsl(var(--bg-accent));
+  border-bottom: 1px solid hsl(var(--bg-primary));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,6 +178,7 @@
 
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
+
   .ats-mv__sale-countdown-num {
     font-size: 3.5rem;
   }
@@ -219,4 +217,12 @@
     border: none;
     padding: 0;
   }
+}
+
+/* lg */
+@media (min-width: theme(--breakpoint-lg)) {
+  .ats-mv__container {
+    max-width: 1000px;
+  }
+
 }

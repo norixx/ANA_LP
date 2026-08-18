@@ -20,14 +20,14 @@
 
 /* Style(color) ========== */
 .ats-c-btn--primary {
-  background: hsl(var(--bg-accent));
+  background: hsl(var(--bg-primary));
 }
 
 /* アウトライン型 */
 .ats-c-btn--primary-ol {
   background-color: hsl(var(--bg-white));
-  border: 1px solid hsl(var(--bg-accent));
-  color: hsl(var(--bg-accent));
+  border: 1px solid hsl(var(--bg-primary));
+  color: hsl(var(--bg-primary));
 }
 
 .ats-c-btn--accent-orange {
@@ -43,13 +43,10 @@
   @apply w-full;
 }
 
-.ats-c-btn--w-md-full {
-  @apply md:w-full;
+.ats-c-btn--w-auto {
+  @apply w-auto;
 }
 
-.ats-c-btn--w-lg-full {
-  @apply lg:w-full;
-}
 
 /* Child */
 .ats-c-btn__content-fill {
@@ -73,4 +70,25 @@
 .ats-c-btn--i-r-arrow-down::after {
   background-color: hsl(var(--bg-white));
   mask-image: var(--ats-icon-arrow-down);
+}
+
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-c-btn--w-md-full {
+    @apply w-full;
+  }
+
+  .ats-c-btn--w-md-auto {
+    @apply w-auto;
+  }
+
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  .ats-c-btn--w-lg-full {
+    @apply w-full;
+  }
+
+  .ats-c-btn--w-lg-auto {
+    @apply w-auto;
+  }
 }

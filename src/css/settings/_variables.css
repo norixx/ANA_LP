@@ -3,6 +3,10 @@
   /* アニメーション設定 */
   interpolate-size: allow-keywords;
 
+  /* Display */
+  --d-md-block: none;
+  --d-lg-block: none;
+
   /* Primitives ============================== */
   --corporate: 229 100 22;
   --yellow: 55 100 50;
@@ -208,7 +212,7 @@
   /* --text-accent-alt: hsl(); */
 
   /* Background */
-  --bg-accent: var(--corporate);
+  --bg-primary: var(--corporate);
   --bg-accent-yellow: var(--yellow);
   --bg-accent-orange: var(--orange);
   --bg-accent-orange-dark: var(--orange-dark);
@@ -219,7 +223,8 @@
   --bg-black: var(--Mono-1300);
 
   /* Border Color */
-  --bdr-light: var(--Mono-00);
+  --bdr-primary: var(--corporate);
+  --bdr-light-blue: var(--Navy-400);
   --bdr-normal: var(--Mono-600);
   --bdr-black: var(--Mono-1300);
 
@@ -238,4 +243,16 @@
   --fz-xs: .75rem;
   --fz-md: 1.2rem;
   --fz-lg: 1.5rem;
+}
+
+@media (min-width: theme(--breakpoint-md)) {
+  :root {
+    --d-md-block: block;
+  }
+}
+
+@media (min-width: theme(--breakpoint-lg)) {
+  :root {
+    --d-lg-block: block;
+  }
 }

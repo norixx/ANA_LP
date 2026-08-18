@@ -36,7 +36,7 @@
 
 .ats-faq__q-text::before {
   content: 'Q';
-  background-color: hsl(var(--bg-accent));
+  background-color: hsl(var(--bg-primary));
   color: hsl(var(--text-white));
   display: grid;
   place-items: center;
