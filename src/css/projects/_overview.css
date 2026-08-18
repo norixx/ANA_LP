@@ -89,8 +89,8 @@
 /* lg */
 @media (min-width: theme(--breakpoint-lg)) {
   .ats-overview__grid {
+    grid-template-rows: auto 1fr;
     grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
   }
 
   .ats-overview__h {
