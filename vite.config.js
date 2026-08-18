@@ -7,7 +7,8 @@ export default defineConfig({
   root: './',
   build: {
     outDir: 'dist',
-    minify: 'esbuild', // デフォルトの高速なesbuildを使用
+    // minify: 'esbuild', // デフォルトの高速なesbuildを使用
+    minify: false, // コーディング規約でやらない方針
   },
   plugins: [
     tailwindcss(),
