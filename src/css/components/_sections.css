@@ -11,6 +11,7 @@
 .ats-c-sect__h {
   @apply text-2xl font-bold mb-3;
   @apply md:text-4xl md:mb-6;
+  line-height: 1.5;
 }
 
 .ats-c-sect__body {}

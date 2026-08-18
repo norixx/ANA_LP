@@ -40,7 +40,15 @@
 }
 
 .ats-c-btn--w-full {
-  width: 100%;
+  @apply w-full;
+}
+
+.ats-c-btn--w-md-full {
+  @apply md:w-full;
+}
+
+.ats-c-btn--w-lg-full {
+  @apply lg:w-full;
 }
 
 /* Child */
@@ -54,5 +62,15 @@
 }
 
 .ats-c-btn--i-r-arrow-down::after {
-  content: '👇️';
+  content: '';
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ats-c-btn--i-r-arrow-down::after {
+  background-color: hsl(var(--bg-white));
+  mask-image: var(--ats-icon-arrow-down);
 }

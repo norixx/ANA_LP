@@ -7,8 +7,17 @@ export default defineConfig({
   root: './',
   build: {
     outDir: 'dist',
-    // minify: 'esbuild', // デフォルトの高速なesbuildを使用
     minify: false, // ANAコーディング規約でminifyしない方針
+    // minify: 'esbuild', // デフォルトの高速なesbuildを使用
+    // minify: 'terser', // Terserは実験用
+    // terserOptions: {
+    //   compress: false,   // ANAコーディング規約でminifyしない方針
+    //   mangle: false,      // 変数名を短縮しない
+    //   format: {
+    //     comments: false,  // コメントは削除する
+    //     beautify: true,
+    //   },
+    // },
     rollupOptions: {
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
