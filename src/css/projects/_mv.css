@@ -8,8 +8,14 @@
   margin-inline: auto;
   display: grid;
   align-content: center;
+
+  @apply px-4 grid-cols-12 gap-y-14 items-center;
+  @apply md:gap-x-16 xl:px-0;
 }
 
+.ats-mv__container-col {
+  @apply col-span-12 lg:col-span-6;
+}
 
 
 .ats-mv__sale-period {

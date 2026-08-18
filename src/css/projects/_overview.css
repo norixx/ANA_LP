@@ -1,4 +1,7 @@
 .ats-overview {
+  --bg-light-blue-alt: var(--light-blue);
+  --bg-light-blue-alt-dark: var(--light-blue-dark);
+
   background-image: linear-gradient(to bottom, hsl(var(--bg-light-blue-alt)), hsl(var(--bg-light-blue-alt-dark)));
 }
 

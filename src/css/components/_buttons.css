@@ -18,21 +18,28 @@
   box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
 }
 
-/* Style(color) */
-.ats-c-btn.--normal {
+/* Style(color) ========== */
+.ats-c-btn--primary {
   background: hsl(var(--bg-accent));
 }
 
-.ats-c-btn.--accent-orange {
+/* アウトライン型 */
+.ats-c-btn--primary-ol {
+  background-color: hsl(var(--bg-white));
+  border: 1px solid hsl(var(--bg-accent));
+  color: hsl(var(--bg-accent));
+}
+
+.ats-c-btn--accent-orange {
   background: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
 }
 
 /* Size */
-.ats-c-btn.--lg {
+.ats-c-btn--lg {
   padding: 1rem 1.5rem;
 }
 
-.ats-c-btn.--w-full {
+.ats-c-btn--w-full {
   width: 100%;
 }
 
@@ -41,29 +48,11 @@
   flex: 1;
 }
 
-/* Icon */
-.ats-c-btn.--icon {
+/* Icon: refer to _icons.css for icon design */
+.ats-c-btn--i-r-arrow-down {
   gap: .5rem;
-
-  /* Icons: refer to _icons.css */
 }
 
-.ats-c-btn.--icon::before,
-.ats-c-btn.--icon::after {
-  mask-repeat: no-repeat;
-  mask-position: center center;
-  mask-size: cover;
-}
-
-.ats-c-btn.--icon-l::before {
-  content: '';
-}
-
-.ats-c-btn.--icon-r::after {
+.ats-c-btn--i-r-arrow-down::after {
   content: '👇️';
-}
-
-.ats-c-btn.--icon-arrow-down::after {
-  content: '';
-
 }

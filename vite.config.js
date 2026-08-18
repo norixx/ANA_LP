@@ -8,7 +8,26 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     // minify: 'esbuild', // デフォルトの高速なesbuildを使用
-    minify: false, // コーディング規約でやらない方針
+    minify: false, // ANAコーディング規約でminifyしない方針
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.names?.[0] || '';
+          if (/\.css$/.test(name)) {
+            return 'assets/css/[name]-[hash][extname]';
+          }
+          if (/\.(png|jpe?g|gif|svg|webp|avif)$/.test(name)) {
+            return 'assets/img/[name]-[hash][extname]';
+          }
+          if (/\.(woff2?|ttf|eot)$/.test(name)) {
+            return 'assets/fonts/[name]-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        },
+      },
+    },
   },
   plugins: [
     tailwindcss(),

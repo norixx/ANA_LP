@@ -135,9 +135,9 @@
     --default-mono-font-family: var(--font-mono);
     --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
     --default-mono-font-variation-settings: var(--font-mono--font-variation-settings);
-    --font-en: "Oswald", "Noto Sans JP", sans-serif;
-    --font-ja: "Noto Sans JP", "Hiragino", sans-serif;
-    --font-ja-alt: "Zen Kaku Gothic New", "Hiragino", sans-serif;
+    --font-en: "Oswald", "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    --font-ja: "Noto Sans JP", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    --font-ja-alt: "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   }
 }
 
@@ -461,19 +461,25 @@
     display: inline-flex;
   }
 
-  .ats-c-btn.--normal {
+  .ats-c-btn--primary {
     background: hsl(var(--bg-accent));
   }
 
-  .ats-c-btn.--accent-orange {
+  .ats-c-btn--primary-ol {
+    background-color: hsl(var(--bg-white));
+    border: 1px solid hsl(var(--bg-accent));
+    color: hsl(var(--bg-accent));
+  }
+
+  .ats-c-btn--accent-orange {
     background: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
   }
 
-  .ats-c-btn.--lg {
+  .ats-c-btn--lg {
     padding: 1rem 1.5rem;
   }
 
-  .ats-c-btn.--w-full {
+  .ats-c-btn--w-full {
     width: 100%;
   }
 
@@ -481,29 +487,12 @@
     flex: 1;
   }
 
-  .ats-c-btn.--icon {
+  .ats-c-btn--i-r-arrow-down {
     gap: .5rem;
   }
 
-  .ats-c-btn.--icon:before, .ats-c-btn.--icon:after {
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
-
-  .ats-c-btn.--icon-l:before {
-    content: "";
-  }
-
-  .ats-c-btn.--icon-r:after {
+  .ats-c-btn--i-r-arrow-down:after {
     content: "👇️";
-  }
-
-  .ats-c-btn.--icon-arrow-down:after {
-    content: "";
   }
 
   :root {
@@ -712,10 +701,6 @@
     gap: calc(var(--spacing) * 8);
   }
 
-  .gap-y-14 {
-    row-gap: calc(var(--spacing) * 14);
-  }
-
   .rounded {
     border-radius: .25rem;
   }
@@ -873,10 +858,6 @@
 
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
-  }
-
-  .py-14 {
-    padding-block: calc(var(--spacing) * 14);
   }
 
   .py-20 {
@@ -1161,10 +1142,6 @@
       flex-direction: row;
     }
 
-    .md\:gap-x-16 {
-      column-gap: calc(var(--spacing) * 16);
-    }
-
     .md\:py-16 {
       padding-block: calc(var(--spacing) * 16);
     }
@@ -1175,18 +1152,8 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:col-span-6 {
-      grid-column: span 6 / span 6;
-    }
-
     .lg\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .xl\:px-0 {
-      padding-inline: 0;
     }
   }
 }
@@ -1424,15 +1391,41 @@
   }
 
   .ats-mv {
-    background: url("/assets/mv-r2Od-UAt.webp") 90% / cover no-repeat;
+    background: url("/assets/img/mv-r2Od-UAt.webp") 90% / cover no-repeat;
     padding-block: 3.5rem;
   }
 
   .ats-mv__container {
     align-content: center;
+    align-items: center;
+    row-gap: calc(var(--spacing) * 14);
     max-width: 1000px;
+    padding-inline: calc(var(--spacing) * 4);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     margin-inline: auto;
     display: grid;
+  }
+
+  @media (min-width: 48rem) {
+    .ats-mv__container {
+      column-gap: calc(var(--spacing) * 16);
+    }
+  }
+
+  @media (min-width: 80rem) {
+    .ats-mv__container {
+      padding-inline: 0;
+    }
+  }
+
+  .ats-mv__container-col {
+    grid-column: span 12 / span 12;
+  }
+
+  @media (min-width: 64rem) {
+    .ats-mv__container-col {
+      grid-column: span 6 / span 6;
+    }
   }
 
   .ats-mv__sale-period {
