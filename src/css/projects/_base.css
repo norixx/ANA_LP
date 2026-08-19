@@ -1,5 +1,4 @@
 .lp-ats {
-  @apply font-ja;
+  @apply font-ja leading-normal;
   color: hsl(var(--text-main));
-  line-height: var(--lh-normal);
 }

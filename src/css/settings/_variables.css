@@ -12,7 +12,6 @@
   --yellow: 55 100 50;
   --orange: 22 99 49;
   --orange-dark: 12 100 44;
-  --pale-blue: 207 64 95;
 
   --blue: 201 100 43;
   --blue-dark: 212 100 42;
@@ -211,12 +210,14 @@
   --text-white: var(--Mono-0);
   /* --text-accent-alt: hsl(); */
 
+  --text-economy: var(--Green-1000);
+  --text-popular: var(--Orange-700);
+
   /* Background */
   --bg-primary: var(--corporate);
   --bg-accent-yellow: var(--yellow);
   --bg-accent-orange: var(--orange);
   --bg-accent-orange-dark: var(--orange-dark);
-  --bg-pale-blue: var(--pale-blue);
   --bg-light-blue-light: var(--Blue-100);
   --bg-light-blue: var(--Blue-200);
   --bg-white: var(--Mono-0);
@@ -224,18 +225,20 @@
 
   /* Border Color */
   --bdr-primary: var(--corporate);
-  --bdr-light-blue: var(--Navy-400);
+  --bdr-light: var(--Mono-300);
   --bdr-normal: var(--Mono-600);
   --bdr-black: var(--Mono-1300);
+  --bdr-light-blue: var(--Navy-400);
 
-  /* Border Radius */
-  --radius-100: 999rem;
+  --bdr-economy: var(--Green-1000);
+  --bdr-popular: var(--Orange-700);
 
   /* Line Height */
-  --lh-normal: 1.5;
+  /* 
   --lh-lg: 1.8;
   --lh-full: 2;
   --lh-sm: 1.2;
+  */
 
   /* Font Size */
   --fz-normal: 1rem;

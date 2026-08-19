@@ -1,0 +1,62 @@
+/* プランカード */
+.ats-c-plan-card {
+  @apply rounded-lg overflow-hidden;
+  border: 1px solid hsl(var(--bdr-light));
+  background: hsl(var(--bg-white));
+}
+
+.ats-c-plan-card__image {
+  aspect-ratio: 191 / 88;
+  object-fit: cover;
+}
+
+.ats-c-plan-card__content {
+  @apply px-4 pt-3;
+}
+
+.ats-c-plan-card__action {
+  @apply p-4;
+}
+
+.ats-c-plan-card__tag-list {
+  @apply flex gap-1;
+}
+
+.ats-c-plan-card__tag-item {}
+
+.ats-c-plan-card__tag {
+  @apply rounded-xs leading-none inline-block;
+  padding: .375rem;
+  border-width: 1px;
+  border-style: solid;
+  font-size: .8125rem;
+  margin-bottom: 10px;
+}
+
+.ats-c-plan-card__tag--economy {
+  color: hsl(var(--text-economy));
+  border-color: hsl(var(--bdr-economy));
+}
+
+.ats-c-plan-card__tag--popular {
+  color: hsl(var(--text-popular));
+  border-color: hsl(var(--bdr-popular));
+}
+
+.ats-c-plan-card__title {
+  @apply font-bold mb-2;
+  font-size: 1.375rem;
+}
+
+.ats-c-plan-card__title--domestic {
+  @apply text-lg pb-2;
+  border-bottom: 1px solid hsl(var(--bdr-light));
+}
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-c-plan-card__title--domestic {
+    font-size: 1.375rem;
+    border-bottom: none;
+  }
+}

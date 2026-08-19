@@ -1,24 +1,14 @@
 .ats-c-btn {
-  border-radius: var(--radius-100);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @apply text-base font-bold rounded-full border-none text-center decoration-0 justify-center items-center inline-flex leading-none whitespace-nowrap gap-2 cursor-pointer;
   padding: 0.75rem 1.5rem;
-  font-size: var(--fz-normal);
-  font-weight: bold;
-  line-height: 1;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  border: none;
+  /* text-decoration: none; */
+  transition: all .3s ease;
   color: hsl(var(--text-white));
-  text-align: center;
-  gap: .5rem;
   box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
 }
 
 /* Style(color) ========== */
+/* プライマリーボタン */
 .ats-c-btn--primary {
   background: hsl(var(--bg-primary));
 }
