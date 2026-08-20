@@ -14,6 +14,7 @@
   @apply mt-6;
 }
 
+
 @media (min-width: theme(--breakpoint-md)) {
   .ats-plans {
     @apply py-16;

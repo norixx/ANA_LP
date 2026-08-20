@@ -20,6 +20,7 @@
 
 .ats-c-plan-card__tag-list {
   @apply flex gap-1;
+  padding-bottom: 10px;
 }
 
 .ats-c-plan-card__tag-item {}
@@ -30,17 +31,16 @@
   border-width: 1px;
   border-style: solid;
   font-size: .8125rem;
-  margin-bottom: 10px;
 }
 
 .ats-c-plan-card__tag--economy {
-  color: hsl(var(--text-economy));
-  border-color: hsl(var(--bdr-economy));
+  color: hsl(var(--text-tag-economy));
+  border-color: hsl(var(--bdr-tag-economy));
 }
 
 .ats-c-plan-card__tag--popular {
-  color: hsl(var(--text-popular));
-  border-color: hsl(var(--bdr-popular));
+  color: hsl(var(--text-tag-popular));
+  border-color: hsl(var(--bdr-tag-popular));
 }
 
 .ats-c-plan-card__title {
@@ -52,6 +52,107 @@
   @apply text-lg pb-2;
   border-bottom: 1px solid hsl(var(--bdr-light));
 }
+
+.ats-c-plan-card__feature {
+  @apply flex gap-2 flex-wrap;
+}
+
+.ats-c-plan-card__feature-item {
+  @apply leading-none text-xs rounded-full;
+  padding: 6px;
+  background: hsl(var(--bg-xlight-indigo));
+  padding-bottom: 10px;
+}
+
+.ats-c-plan-card__city {
+  @apply font-bold mb-1;
+}
+
+.ats-c-plan-card__period {
+  @apply flex flex-wrap text-sm;
+  padding-bottom: 10px;
+}
+
+.ats-c-plan-card__price-list {
+  @apply grid;
+  gap: 10px;
+}
+
+.ats-c-plan-card__price-item {
+  @apply grid;
+  gap: 6px;
+  padding-bottom: 10px;
+}
+
+.ats-c-plan-card__price-item:not(:last-of-type) {
+  border-bottom: 1px solid hsl(var(--bdr-light));
+}
+
+.ats-c-plan-card__price {
+  @apply flex flex-wrap gap-x-4 items-baseline;
+}
+
+/* TODO: カンマ対応 */
+.ats-c-plan-card__price-value {
+  @apply flex items-baseline font-bold leading-none;
+  --price-gradient: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)) 80%);
+  font-family: var(--font-en);
+  background: var(--price-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: hsl(var(--text-accent-orange));
+  font-size: 1.625rem;
+}
+
+.ats-c-plan-card__price-value--main {
+  font-size: 2rem;
+}
+
+.ats-c-plan-card__price-value::before {
+  @apply text-2xl mr-1;
+  content: '\00A5';
+}
+
+.ats-c-plan-card__price-value::after {
+  @apply font-normal text-lg self-center ml-1;
+  content: '〜';
+}
+
+.ats-c-plan-card__price-type {
+  @apply font-bold text-xs;
+  color: hsl(var(--text-sub));
+}
+
+.ats-c-plan-card__price-note {
+  @apply text-xs;
+}
+
+.ats-c-plan-card__note {
+  @apply text-xs;
+  color: hsl(var(--text-sub));
+  margin-top: 10px;
+}
+
+.ats-c-plan-card__note::before {
+  content: '*';
+}
+
+.ats-c-plan-card__action {
+  @apply grid gap-y-4 gap-x-5;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ats-c-plan-card__action-main {
+  grid-column: span 2;
+  grid-row: 1 / 2;
+}
+
+.ats-c-plan-card__action-sub {
+  @apply grid grid-cols-subgrid col-span-2;
+  /* grid-column: span 2; */
+}
+
 
 /* md */
 @media (min-width: theme(--breakpoint-md)) {

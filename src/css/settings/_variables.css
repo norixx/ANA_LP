@@ -205,23 +205,23 @@
   /* Semantics ============================== */
   /* Text */
   --text-main: var(--Mono-1200);
+  --text-sub: var(--Mono-900);
   --text-link: var(--corporate);
   --text-accent: var(--corporate);
+  --text-accent-orange: var(--orange);
   --text-white: var(--Mono-0);
-  /* --text-accent-alt: hsl(); */
 
-  --text-economy: var(--Green-1000);
-  --text-popular: var(--Orange-700);
+  --text-tag-economy: var(--Green-1000);
+  --text-tag-popular: var(--Orange-700);
 
   /* Background */
   --bg-primary: var(--corporate);
   --bg-accent-yellow: var(--yellow);
   --bg-accent-orange: var(--orange);
   --bg-accent-orange-dark: var(--orange-dark);
-  --bg-light-blue-light: var(--Blue-100);
-  --bg-light-blue: var(--Blue-200);
   --bg-white: var(--Mono-0);
   --bg-black: var(--Mono-1300);
+  --bg-xlight-indigo: var(--Indigo-100);
 
   /* Border Color */
   --bdr-primary: var(--corporate);
@@ -230,8 +230,8 @@
   --bdr-black: var(--Mono-1300);
   --bdr-light-blue: var(--Navy-400);
 
-  --bdr-economy: var(--Green-1000);
-  --bdr-popular: var(--Orange-700);
+  --bdr-tag-economy: var(--Green-1000);
+  --bdr-tag-popular: var(--Orange-700);
 
   /* Line Height */
   /* 
