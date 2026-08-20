@@ -61,7 +61,6 @@
   @apply leading-none text-xs rounded-full;
   padding: 6px;
   background: hsl(var(--bg-xlight-indigo));
-  padding-bottom: 10px;
 }
 
 .ats-c-plan-card__city {
@@ -149,8 +148,9 @@
 }
 
 .ats-c-plan-card__action-sub {
-  @apply grid grid-cols-subgrid col-span-2;
-  /* grid-column: span 2; */
+  @apply grid gap-4;
+  grid-column: span 2;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 
@@ -159,5 +159,16 @@
   .ats-c-plan-card__title--domestic {
     font-size: 1.375rem;
     border-bottom: none;
+  }
+
+  .ats-c-plan-card__action-sub {
+    grid-template-columns: auto;
+  }
+}
+
+/* lg */
+@media (min-width: theme(--breakpoint-lg)) {
+  .ats-c-plan-card__action-sub {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

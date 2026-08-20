@@ -2,9 +2,13 @@
 
 .ats-notes {
   background: hsl(204, 45%, 98%);
+  @apply py-12;
 }
 
-.ats-notes__subsect {}
+.ats-notes__subsect {
+  @apply mx-auto;
+  max-width: 800px;
+}
 
 .ats-notes__subsect-h {
   font-weight: bold;
@@ -34,4 +38,12 @@
 .ats-notes__sublist a {
   font-weight: bold;
   text-decoration: underline;
+}
+
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-notes {
+    @apply py-16;
+  }
 }

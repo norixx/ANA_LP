@@ -1,4 +1,12 @@
 /* 関連情報 */
 .ats-related {
+  @apply py-12;
   background: hsl(var(--bg-white));
+}
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-related {
+    @apply py-16;
+  }
 }

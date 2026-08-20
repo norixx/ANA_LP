@@ -1,5 +1,6 @@
 .ats-faq {
   background: hsl(203 91 87);
+  @apply py-12;
 }
 
 .ats-faq__list {
@@ -44,6 +45,10 @@
 
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
+  .ats-faq {
+    @apply md:py-16;
+  }
+
   .ats-faq__q {
     font-size: 1.125rem;
   }

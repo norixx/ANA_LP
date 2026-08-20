@@ -1,4 +1,13 @@
 /* 空席照会 */
 .ats-vacant-inq {
+  @apply py-6;
   background: hsl(var(--bg-white));
+}
+
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-vacant-inq {
+    @apply py-16;
+  }
 }
