@@ -103,6 +103,8 @@
     --text-xs--line-height: calc(1 / .75);
     --text-sm: .875rem;
     --text-sm--line-height: calc(1.25 / .875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
@@ -115,13 +117,16 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --tracking-tight: -.025em;
     --tracking-wider: .05em;
+    --leading-normal: 1.5;
     --leading-relaxed: 1.625;
+    --radius-xs: .125rem;
     --radius-lg: .5rem;
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
@@ -411,20 +416,6 @@
 
   .ats-l-container--1080 {
     max-width: 1080px;
-    padding-inline: calc(var(--spacing) * 4);
-    margin-inline: auto;
-  }
-
-  @media (min-width: 48rem) {
-    .ats-l-container--1080 {
-      padding-inline: calc(var(--spacing) * 6);
-    }
-  }
-
-  @media (min-width: 80rem) {
-    .ats-l-container--1080 {
-      padding-inline: 0;
-    }
   }
 
   .ats-c-sect__header {
@@ -438,36 +429,47 @@
     line-height: var(--tw-leading, var(--text-2xl--line-height));
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+  }
+
+  .ats-c-subsect__h {
+    margin-bottom: calc(var(--spacing) * 3);
+    text-align: center;
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
   }
 
   @media (min-width: 48rem) {
-    .ats-c-sect__h {
+    .ats-c-sect__h, .ats-c-subsect__h {
       margin-bottom: calc(var(--spacing) * 6);
       font-size: var(--text-4xl);
       line-height: var(--tw-leading, var(--text-4xl--line-height));
     }
   }
 
-  .ats-c-sect__h {
-    line-height: 1.5;
-  }
-
   .ats-c-btn {
-    border-radius: var(--radius-100);
-    font-size: var(--fz-normal);
     cursor: pointer;
-    white-space: nowrap;
-    color: hsl(var(--text-white));
-    text-align: center;
-    box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
-    border: none;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
-    padding: .75rem 1.5rem;
-    font-weight: bold;
+    gap: calc(var(--spacing) * 2);
+    --tw-border-style: none;
+    text-align: center;
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    --tw-leading: 1;
+    --tw-font-weight: var(--font-weight-bold);
     line-height: 1;
-    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+    color: hsl(var(--text-white));
+    box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
+    border-style: none;
+    border-radius: 3.40282e38px;
+    padding: .75rem 1.5rem;
+    text-decoration-thickness: 0;
     transition: all .3s;
     display: inline-flex;
   }
@@ -539,6 +541,217 @@
 
     .ats-c-btn--w-lg-auto {
       width: auto;
+    }
+  }
+
+  .ats-c-plan-card {
+    border-radius: var(--radius-lg);
+    border: 1px solid hsl(var(--bdr-light));
+    background: hsl(var(--bg-white));
+    overflow: hidden;
+  }
+
+  .ats-c-plan-card__image {
+    aspect-ratio: 191 / 88;
+    object-fit: cover;
+  }
+
+  .ats-c-plan-card__content {
+    padding-inline: calc(var(--spacing) * 4);
+    padding-top: calc(var(--spacing) * 3);
+  }
+
+  .ats-c-plan-card__action {
+    padding: calc(var(--spacing) * 4);
+  }
+
+  .ats-c-plan-card__tag-list {
+    gap: var(--spacing);
+    padding-bottom: 10px;
+    display: flex;
+  }
+
+  .ats-c-plan-card__tag {
+    border-radius: var(--radius-xs);
+    --tw-leading: 1;
+    border-style: solid;
+    border-width: 1px;
+    padding: .375rem;
+    font-size: .8125rem;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  .ats-c-plan-card__tag--economy {
+    color: hsl(var(--text-tag-economy));
+    border-color: hsl(var(--bdr-tag-economy));
+  }
+
+  .ats-c-plan-card__tag--popular {
+    color: hsl(var(--text-tag-popular));
+    border-color: hsl(var(--bdr-tag-popular));
+  }
+
+  .ats-c-plan-card__title {
+    margin-bottom: calc(var(--spacing) * 2);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    font-size: 1.375rem;
+  }
+
+  .ats-c-plan-card__title--domestic {
+    padding-bottom: calc(var(--spacing) * 2);
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+    border-bottom: 1px solid hsl(var(--bdr-light));
+  }
+
+  .ats-c-plan-card__feature {
+    gap: calc(var(--spacing) * 2);
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .ats-c-plan-card__feature-item {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    --tw-leading: 1;
+    background: hsl(var(--bg-xlight-indigo));
+    border-radius: 3.40282e38px;
+    padding: 6px;
+    line-height: 1;
+  }
+
+  .ats-c-plan-card__city {
+    margin-bottom: var(--spacing);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .ats-c-plan-card__period {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    display: flex;
+  }
+
+  .ats-c-plan-card__price-list {
+    gap: 10px;
+    display: grid;
+  }
+
+  .ats-c-plan-card__price-item {
+    gap: 6px;
+    padding-bottom: 10px;
+    display: grid;
+  }
+
+  .ats-c-plan-card__price-item:not(:last-of-type) {
+    border-bottom: 1px solid hsl(var(--bdr-light));
+  }
+
+  .ats-c-plan-card__price {
+    align-items: baseline;
+    column-gap: calc(var(--spacing) * 4);
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .ats-c-plan-card__price-value {
+    --tw-leading: 1;
+    --tw-font-weight: var(--font-weight-bold);
+    line-height: 1;
+    font-weight: var(--font-weight-bold);
+    --price-gradient: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)) 80%);
+    font-family: var(--font-en);
+    background: var(--price-gradient);
+    -webkit-text-fill-color: transparent;
+    color: hsl(var(--text-accent-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    align-items: baseline;
+    font-size: 1.625rem;
+    display: flex;
+  }
+
+  .ats-c-plan-card__price-value--main {
+    font-size: 2rem;
+  }
+
+  .ats-c-plan-card__price-value:before {
+    margin-right: var(--spacing);
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    content: "¥";
+  }
+
+  .ats-c-plan-card__price-value:after {
+    margin-left: var(--spacing);
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+    content: "〜";
+    align-self: center;
+  }
+
+  .ats-c-plan-card__price-type {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: hsl(var(--text-sub));
+  }
+
+  .ats-c-plan-card__price-note {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+
+  .ats-c-plan-card__note {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    color: hsl(var(--text-sub));
+    margin-top: 10px;
+  }
+
+  .ats-c-plan-card__note:before {
+    content: "*";
+  }
+
+  .ats-c-plan-card__action {
+    column-gap: calc(var(--spacing) * 5);
+    row-gap: calc(var(--spacing) * 4);
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+
+  .ats-c-plan-card__action-main {
+    grid-area: 1 / span 2 / 2;
+  }
+
+  .ats-c-plan-card__action-sub {
+    gap: calc(var(--spacing) * 4);
+    grid-column: span 2;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+
+  @media (min-width: 48rem) {
+    .ats-c-plan-card__title--domestic {
+      border-bottom: none;
+      font-size: 1.375rem;
+    }
+
+    .ats-c-plan-card__action-sub {
+      grid-template-columns: auto;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .ats-c-plan-card__action-sub {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -1077,6 +1290,10 @@
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
+  .filter {
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
   .backdrop-blur-md {
     --tw-backdrop-blur: blur(var(--blur-md));
     -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
@@ -1219,13 +1436,15 @@
 
 :root {
   interpolate-size: allow-keywords;
+}
+
+.lp-ats {
   --d-md-block: none;
   --d-lg-block: none;
   --corporate: 229 100 22;
   --yellow: 55 100 50;
   --orange: 22 99 49;
   --orange-dark: 12 100 44;
-  --pale-blue: 207 64 95;
   --blue: 201 100 43;
   --blue-dark: 212 100 42;
   --Indigo-50: 216 100 98;
@@ -1413,27 +1632,27 @@
   --Mono-1200: 0 0 10;
   --Mono-1300: 0 0 0;
   --text-main: var(--Mono-1200);
+  --text-sub: var(--Mono-900);
   --text-link: var(--corporate);
-  --text-accent: var(--corporate);
+  --text-primary: var(--corporate);
+  --text-accent-orange: var(--orange);
   --text-white: var(--Mono-0);
+  --text-tag-economy: var(--Green-1000);
+  --text-tag-popular: var(--Orange-700);
   --bg-primary: var(--corporate);
   --bg-accent-yellow: var(--yellow);
   --bg-accent-orange: var(--orange);
   --bg-accent-orange-dark: var(--orange-dark);
-  --bg-pale-blue: var(--pale-blue);
-  --bg-light-blue-light: var(--Blue-100);
-  --bg-light-blue: var(--Blue-200);
   --bg-white: var(--Mono-0);
   --bg-black: var(--Mono-1300);
+  --bg-xlight-indigo: var(--Indigo-100);
   --bdr-primary: var(--corporate);
-  --bdr-light-blue: var(--Navy-400);
+  --bdr-light: var(--Mono-300);
   --bdr-normal: var(--Mono-600);
   --bdr-black: var(--Mono-1300);
-  --radius-100: 999rem;
-  --lh-normal: 1.5;
-  --lh-lg: 1.8;
-  --lh-full: 2;
-  --lh-sm: 1.2;
+  --bdr-light-blue: var(--Navy-400);
+  --bdr-tag-economy: var(--Green-1000);
+  --bdr-tag-popular: var(--Orange-700);
   --fz-normal: 1rem;
   --fz-sm: .875rem;
   --fz-xs: .75rem;
@@ -1441,23 +1660,12 @@
   --fz-lg: 1.5rem;
 }
 
-@media (min-width: 48rem) {
-  :root {
-    --d-md-block: block;
-  }
-}
-
-@media (min-width: 64rem) {
-  :root {
-    --d-lg-block: block;
-  }
-}
-
 @layer projects {
   .lp-ats {
     font-family: var(--font-ja);
+    --tw-leading: var(--leading-normal);
+    line-height: var(--leading-normal);
     color: hsl(var(--text-main));
-    line-height: var(--lh-normal);
   }
 
   .ats-mv {
@@ -1553,7 +1761,7 @@
 
   .ats-mv__sale-countdown-box {
     background: hsl(var(--bg-white));
-    color: hsl(var(--text-accent));
+    color: hsl(var(--text-primary));
     grid-template-columns: auto auto;
     place-content: center;
     place-items: center;
@@ -1581,7 +1789,7 @@
 
   .ats-mv__boarding-period {
     background: hsla(var(--bg-white)/.9);
-    color: hsl(var(--text-accent));
+    color: hsl(var(--text-primary));
     border-radius: 20px;
     padding: 1rem;
   }
@@ -1700,15 +1908,58 @@
     }
   }
 
+  .ats-detail {
+    --bg-start: 227 100 95;
+    --bg-end: 188 100 87;
+    padding-top: calc(var(--spacing) * 24);
+    padding-bottom: calc(var(--spacing) * 20);
+    background: url("data:image/svg+xml,%3csvg%20width='1288'%20height='285'%20viewBox='0%200%201288%20285'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M937.868%2061.8257C1003.86%2044.0059%201073.79%2057.7461%201054.6%20118.329C1050.25%20135.072%201042.32%20154.528%201043.41%20171.551C1047.86%20241.028%201165.42%20263.435%201237.94%20233.024C1255.16%20225.807%201271.52%20217.627%201287.08%20208.681V0H785.508C797.168%2058.3259%20866.698%2083.8183%20937.868%2061.8257Z'%20fill='white'/%3e%3cpath%20d='M730.451%2078.9621C858.611%2085.9409%20946.731%20-12.5391%201062.96%2029.3131C1195.25%2076.9534%201024.66%20195.117%201280.4%20182.35C1282.67%20182.236%201284.9%20182.029%201287.08%20181.77V0H575.891C591.101%2040.941%20644.621%2074.2923%20730.451%2078.9621Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M1164.46%20140.04C1164%20142.773%201164.29%20145.538%201165.85%20148.271C1166.77%20149.887%201168.03%20151.036%201169.33%20151.989C1175.31%20156.4%201186.61%20158.719%201192.29%20151.854C1200.31%20142.173%201200.79%20114.703%201183.59%20113.978C1179.31%20113.802%201176.28%20118.089%201174.07%20121.889C1171%20127.159%201165.57%20133.517%201164.46%20140.04Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M354.5%2019.8918C338.82%2026.6325%20323.84%2035.2059%20310.36%2045.9019C304.56%2050.5096%20299.15%2055.2208%20295.93%2062.21C292.53%2069.5926%20294.11%2078.7872%20303.53%2079.7398C309.04%2080.299%20314.33%2077.7207%20319.36%2075.3496C335.75%2067.6253%20354.91%2054.7031%20372.6%2063.6078C379.77%2067.2111%20384.99%2070.6384%20391.88%2071.0111C403.51%2071.6428%20412.25%2060.9053%20421.57%2053.678C429.72%2047.3618%20439.52%2043.3547%20449.62%2042.1226C460.3%2040.8179%20467.96%2038.7781%20477.76%2033.5595C483.93%2030.2772%20489.3%2024.603%20487.8%2017.852C487.26%2015.4394%20482.81%2011.0285%20479.93%209.56854C466.93%203.01425%20449.76%204.90909%20433.9%209.79633C426.52%2012.0743%20419.17%2015.2013%20411.47%2015.0667C404.53%2014.9528%20397.89%2012.0639%20390.97%2011.5359C378.76%2010.604%20364.43%2015.6155%20354.49%2019.8815L354.5%2019.8918Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M23.1692%20172.02C42.9492%20156.333%2073.2692%20159.543%2073.4592%20189.115C73.4992%20194.882%2071.7692%20202.689%2069.7692%20208.208C63.9992%20224.133%2081.6892%20245.256%2092.5992%20253.426C101.599%20260.156%20104.599%20280.523%2090.9292%20284.489C83.8492%20286.549%2078.2392%20276.65%2071.9292%20273.441C62.7592%20268.781%2049.5992%20269.299%2040.9292%20267.57C27.7492%20264.94%2018.3392%20261.709%208.92918%20251.003C-8.07082%20231.671%200.59918%20189.912%2023.1592%20172.02H23.1692Z'%20fill='white'/%3e%3cg%20filter='url(%23filter0_f_40000300_51615)'%20style='mix-blend-mode:multiply'%3e%3cpath%20d='M446.039%2030.9493C452.969%2024.0741%20463.959%2020.5225%20473.389%2022.9351C487.939%2026.6523%20494.659%2043.5091%20483.529%2054.4847C478.039%2059.9%20472.169%2065.5328%20464.769%2067.2206C456.149%2069.1982%20446.529%2064.7976%20442.129%2056.8662C436.589%2046.8846%20439.489%2037.4519%20446.039%2030.9493Z'%20fill='white'/%3e%3c/g%3e%3cg%20filter='url(%23filter1_f_40000300_51615)'%20style='mix-blend-mode:multiply'%3e%3cpath%20d='M52.6109%20115.191C57.0109%20111.846%2062.2309%20111.701%2067.4009%20113.544C72.5609%20115.377%2076.3409%20121.517%2074.6009%20126.87C70.9509%20138.125%2044.4209%20148.407%2044.5709%20130.018C44.6109%20124.737%2048.5009%20118.318%2052.6109%20115.191Z'%20fill='white'/%3e%3c/g%3e%3cpath%20d='M719.93%2039.5242C721.18%2035.5585%20724.55%2032.359%20728.45%2031.1683C747.05%2025.5252%20758.1%2055.8944%20737.94%2061.3512C732.55%2062.8111%20725.97%2057.8307%20722.58%2053.2541C720.27%2050.1374%20718.11%2045.3019%20719.93%2039.5242Z'%20fill='%2346A4FB'/%3e%3cdefs%3e%3cfilter%20id='filter0_f_40000300_51615'%20x='435.203'%20y='18.1797'%20width='57.8828'%20height='53.512'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51615'/%3e%3c/filter%3e%3cfilter%20id='filter1_f_40000300_51615'%20x='40.5703'%20y='108.363'%20width='38.459'%20height='35.7329'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51615'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e") 110% top / 130%, url("data:image/svg+xml,%3csvg%20width='1092'%20height='275'%20viewBox='0%200%201092%20275'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M536.28%20271.354C523.18%20211.124%20436.87%20185.874%20347.68%20206.984C266.47%20226.204%20181.5%20208.844%20203.29%20147.004C209.18%20130.274%20218.7%20113.414%20217.36%2096.2335C212.31%2031.7835%2089.45%207.64354%200%2027.8035V274.364H536.88C536.69%20273.354%20536.49%20272.344%20536.28%20271.354Z'%20fill='white'/%3e%3cpath%20d='M612.83%20187.612C454.57%20180.572%20345.76%20279.972%20202.24%20237.722C51.89%20193.462%20220.06%2053.2223%200%2074.0723V274.352H806.41C792.22%20229.862%20724.78%20192.592%20612.83%20187.612Z'%20fill='%234AD2FB'/%3e%3cg%20filter='url(%23filter0_f_40000300_51625)'%3e%3cpath%20d='M820.658%20203.102C820.558%20211.032%20823.038%20219.022%20827.838%20225.352C835.818%20235.892%20849.048%20241.212%20862.078%20243.462C875.268%20245.742%20888.918%20245.352%20901.958%20242.342C920.788%20237.992%20935.908%20226.542%20952.208%20216.512C966.648%20207.632%20989.018%20202.682%201002.21%20190.682C1022.54%20172.182%201035.65%20135.342%201010.6%20132.292C1000.54%20131.072%20985.468%20141.262%20979.038%20144.292C967.218%20149.852%20947.928%20155.402%20936.368%20157.622C906.668%20163.332%20892.528%20158.972%20863.558%20163.532C846.948%20166.142%20828.338%20175.202%20822.508%20192.192C821.308%20195.702%20820.698%20199.402%20820.648%20203.102H820.658Z'%20fill='%2390C6FF'/%3e%3c/g%3e%3cpath%20d='M592.43%20199.683C591.98%20204.533%20593%20209.413%20596.04%20213.163C598.18%20215.803%20601.11%20217.683%20604.13%20219.243C618.03%20226.453%20644.28%20230.243%20657.48%20219.033C668.83%20209.393%20675.99%20188.093%20666.95%20175.073C660.34%20165.543%20647.13%20162.523%20635.75%20164.753C619.45%20167.943%20603%20174.903%20595.12%20190.433C593.67%20193.283%20592.72%20196.483%20592.42%20199.693L592.43%20199.683Z'%20fill='%234A96FB'/%3e%3cg%20filter='url(%23filter1_f_40000300_51625)'%3e%3cpath%20d='M914.788%20129.094C917.708%20137.174%20927.418%20143.194%20934.138%20140.054C945.668%20134.654%20957.218%20116.884%20949.908%20102.634C944.828%2092.7344%20930.818%2099.7744%20925.998%20103.194C916.358%20110.034%20911.238%20119.264%20914.798%20129.094H914.788Z'%20fill='%23AEEBFF'/%3e%3c/g%3e%3cg%20filter='url(%23filter2_f_40000300_51625)'%3e%3cpath%20d='M1065.13%204.11424C1074.38%204.64424%201083.52%207.38424%201086.3%2016.0642C1089.27%2025.3342%201083.2%2031.3242%201075.92%2035.9342C1066.59%2041.8442%201057.13%2047.2642%201049.39%2055.3242C1045.91%2058.9542%201042.9%2063.0242%201039.38%2066.6142C1033.62%2072.4942%201025.82%2075.6142%201018.71%2079.6742C1012.58%2083.1742%201007.38%2088.1742%201001.93%2092.6742C997.718%2096.1542%20977.258%20105.614%20975.868%2095.4442C975.448%2092.4042%20976.368%2088.2842%20979.928%2083.3942C986.028%2075.0042%20995.718%2074.1142%201002.53%2066.2642C1005.44%2062.9042%201007.68%2058.6642%201007.44%2054.2242C1007.03%2046.8642%201000.2%2043.1442%20998.208%2036.5542C993.338%2020.4842%201015.77%2011.0442%201026.88%207.67424C1033.7%205.60424%201041.77%205.57424%201048.87%204.80424C1053.24%204.32424%201059.21%203.76424%201065.14%204.10424L1065.13%204.11424Z'%20fill='%23AEEBFF'/%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_f_40000300_51625'%20x='818.648'%20y='130.191'%20width='207.68'%20height='116.735'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='1'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3cfilter%20id='filter1_f_40000300_51625'%20x='909.664'%20y='93.5586'%20width='46.5312'%20height='51.3429'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3cfilter%20id='filter2_f_40000300_51625'%20x='971.773'%20y='0'%20width='119.297'%20height='104.02'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e") left bottom / 110%, linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
+    background-repeat: no-repeat;
+  }
+
   .ats-detail__h {
+    margin-bottom: calc(var(--spacing) * 6);
+    text-align: center;
     font-family: var(--font-ja-alt);
-    color: var(--text-accent);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: hsl(var(--text-primary));
     font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
-    font-weight: bold;
+  }
+
+  .ats-detail__lead {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-ja-alt);
+    line-height: 2.3;
+  }
+
+  .ats-detail__lead br {
+    display: none;
+  }
+
+  @media (min-width: 48rem) {
+    .ats-detail {
+      padding-block: calc(var(--spacing) * 24);
+      background: url("data:image/svg+xml,%3csvg%20width='78'%20height='78'%20viewBox='0%200%2078%2078'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='39'%20cy='39'%20r='39'%20fill='white'/%3e%3cpath%20d='M53.0894%2040.8974L49.5334%2041.2978C48.1837%2041.447%2047.198%2042.7188%2047.3421%2044.1162C47.4862%2045.5137%2048.7145%2046.5343%2050.0641%2046.3851L53.6201%2045.9847C54.9698%2045.8356%2055.9554%2044.5637%2055.8114%2043.1663C55.6673%2041.7689%2054.439%2040.7482%2053.0894%2040.8974Z'%20fill='%230039DD'/%3e%3cpath%20d='M55.5686%2043.1884C55.6823%2044.264%2054.9317%2045.2375%2053.8853%2045.3552C52.8466%2045.473%2051.9064%2044.6957%2051.7926%2043.6123C51.6789%2042.5289%2052.4295%2041.5633%2053.4759%2041.4455C54.5222%2041.3277%2055.4548%2042.105%2055.5686%2043.1884Z'%20fill='%233F434C'/%3e%3cpath%20d='M21.5467%2037.7035L65%2032.8202C65%2032.8202%2069.4432%2032.5455%2072.5898%2036.6436C73.0675%2037.2717%2073.1357%2038.1352%2072.7414%2038.8183C72.241%2039.7054%2071.0734%2040.8202%2068.4196%2041.6053L67.0169%2041.7623L37.0522%2045.1303C34.6563%2045.3973%2032.23%2045.2245%2029.8947%2044.6043C27.9461%2044.0862%2025.6411%2043.2697%2023.6242%2042.0371C22.3504%2041.2599%2021.4178%2040.0037%2021.0084%2038.5356C20.9022%2038.151%2021.16%2037.7506%2021.5467%2037.7113V37.7035Z'%20fill='%23E3EAFF'/%3e%3cpath%20d='M26.1546%2037.1851L26.0257%2035.9525C25.9423%2035.136%2025.6769%2034.3509%2025.2448%2033.6601L22.0223%2028.4236C21.81%2028.0781%2021.4309%2027.8897%2021.0367%2027.9368C20.7864%2027.9682%2020.6121%2028.1959%2020.6348%2028.455L21.6053%2037.7032L26.147%2037.1929L26.1546%2037.1851Z'%20fill='%230039DD'/%3e%3cpath%20d='M67.5823%2036.2127L68.0903%2036.1577C68.1813%2036.1499%2068.242%2036.0478%2068.2116%2035.9614L67.9993%2035.3569C67.9766%2035.2941%2067.9159%2035.2549%2067.8477%2035.2627L67.3245%2035.3255C67.2335%2035.3334%2067.1729%2035.4354%2067.2032%2035.5296L67.4382%2036.1342C67.461%2036.197%2067.5217%2036.2362%2067.5899%2036.2284L67.5823%2036.2127Z'%20fill='%233F434C'/%3e%3cpath%20d='M68.7539%2036.0878L71.802%2035.7423C71.5063%2035.4362%2071.1954%2035.1614%2070.8921%2034.9102L68.5189%2035.1771C68.3824%2035.1928%2068.299%2035.3341%2068.3521%2035.4676L68.5416%2035.9543C68.572%2036.0407%2068.663%2036.0956%2068.7539%2036.0878Z'%20fill='%233F434C'/%3e%3cpath%20d='M66.719%2035.3828L66.3854%2035.4221C66.302%2035.4299%2066.2565%2035.5163%2066.2793%2035.5948L66.4612%2036.2386C66.4764%2036.3014%2066.5371%2036.3406%2066.5977%2036.3328L66.9693%2036.2935C67.0527%2036.2857%2067.1057%2036.1993%2067.0754%2036.1129L66.8479%2035.477C66.8252%2035.4221%2066.7721%2035.3828%2066.7115%2035.3907L66.719%2035.3828Z'%20fill='%233F434C'/%3e%3cpath%20d='M39.7066%2042.4051L36.1505%2042.8055C34.8009%2042.9547%2033.8152%2044.2265%2033.9593%2045.6239C34.1034%2047.0214%2035.3317%2048.042%2036.6813%2047.8928L40.2373%2047.4924C41.5869%2047.3433%2042.5726%2046.0714%2042.4286%2044.674C42.2845%2043.2765%2041.0562%2042.2559%2039.7066%2042.4051Z'%20fill='%230039DD'/%3e%3cpath%20d='M42.1779%2044.6961C42.2917%2045.7716%2041.541%2046.7451%2040.4947%2046.8629C39.4484%2046.9807%2038.5157%2046.2034%2038.402%2045.12C38.2883%2044.0445%2039.0389%2043.071%2040.0853%2042.9532C41.124%2042.8354%2042.0642%2043.6127%2042.1779%2044.6961Z'%20fill='%233F434C'/%3e%3cpath%20d='M47.6844%2042.3172C48.2986%2042.2701%2048.8445%2041.8854%2049.0947%2041.3123C49.1478%2041.1945%2049.1857%2041.0689%2049.1933%2040.959C49.2464%2040.3859%2048.8445%2039.7343%2048.147%2039.7343L6.56641%2044.3976C6.37686%2044.4212%206.21005%2044.5311%206.1039%2044.696C5.81578%2045.1513%206.16456%2045.748%206.68773%2045.7009L47.692%2042.3172H47.6844Z'%20fill='%230039DD'/%3e%3cpath%20d='M25.9374%2038.9368L15.0722%2040.1537C14.9206%2040.1694%2014.8144%2040.3107%2014.8296%2040.4677C14.8447%2040.6169%2014.9736%2040.7268%2015.1177%2040.719L26.0284%2040.0595C26.3089%2040.0438%2026.5212%2039.7847%2026.4909%2039.4942V39.3843C26.453%2039.1017%2026.2028%2038.8976%2025.9374%2038.929V38.9368Z'%20fill='%230039DD'/%3e%3c/svg%3e") 110% top / 95%, url("data:image/svg+xml,%3csvg%20width='1288'%20height='285'%20viewBox='0%200%201288%20285'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M937.868%2061.8257C1003.86%2044.0059%201073.79%2057.7461%201054.6%20118.329C1050.25%20135.072%201042.32%20154.528%201043.41%20171.551C1047.86%20241.028%201165.42%20263.435%201237.94%20233.024C1255.16%20225.807%201271.52%20217.627%201287.08%20208.681V0H785.508C797.168%2058.3259%20866.698%2083.8183%20937.868%2061.8257Z'%20fill='white'/%3e%3cpath%20d='M730.451%2078.9621C858.611%2085.9409%20946.731%20-12.5391%201062.96%2029.3131C1195.25%2076.9534%201024.66%20195.117%201280.4%20182.35C1282.67%20182.236%201284.9%20182.029%201287.08%20181.77V0H575.891C591.101%2040.941%20644.621%2074.2923%20730.451%2078.9621Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M1164.46%20140.04C1164%20142.773%201164.29%20145.538%201165.85%20148.271C1166.77%20149.887%201168.03%20151.036%201169.33%20151.989C1175.31%20156.4%201186.61%20158.719%201192.29%20151.854C1200.31%20142.173%201200.79%20114.703%201183.59%20113.978C1179.31%20113.802%201176.28%20118.089%201174.07%20121.889C1171%20127.159%201165.57%20133.517%201164.46%20140.04Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M354.5%2019.8918C338.82%2026.6325%20323.84%2035.2059%20310.36%2045.9019C304.56%2050.5096%20299.15%2055.2208%20295.93%2062.21C292.53%2069.5926%20294.11%2078.7872%20303.53%2079.7398C309.04%2080.299%20314.33%2077.7207%20319.36%2075.3496C335.75%2067.6253%20354.91%2054.7031%20372.6%2063.6078C379.77%2067.2111%20384.99%2070.6384%20391.88%2071.0111C403.51%2071.6428%20412.25%2060.9053%20421.57%2053.678C429.72%2047.3618%20439.52%2043.3547%20449.62%2042.1226C460.3%2040.8179%20467.96%2038.7781%20477.76%2033.5595C483.93%2030.2772%20489.3%2024.603%20487.8%2017.852C487.26%2015.4394%20482.81%2011.0285%20479.93%209.56854C466.93%203.01425%20449.76%204.90909%20433.9%209.79633C426.52%2012.0743%20419.17%2015.2013%20411.47%2015.0667C404.53%2014.9528%20397.89%2012.0639%20390.97%2011.5359C378.76%2010.604%20364.43%2015.6155%20354.49%2019.8815L354.5%2019.8918Z'%20fill='%2346A4FB'/%3e%3cpath%20d='M23.1692%20172.02C42.9492%20156.333%2073.2692%20159.543%2073.4592%20189.115C73.4992%20194.882%2071.7692%20202.689%2069.7692%20208.208C63.9992%20224.133%2081.6892%20245.256%2092.5992%20253.426C101.599%20260.156%20104.599%20280.523%2090.9292%20284.489C83.8492%20286.549%2078.2392%20276.65%2071.9292%20273.441C62.7592%20268.781%2049.5992%20269.299%2040.9292%20267.57C27.7492%20264.94%2018.3392%20261.709%208.92918%20251.003C-8.07082%20231.671%200.59918%20189.912%2023.1592%20172.02H23.1692Z'%20fill='white'/%3e%3cg%20filter='url(%23filter0_f_40000300_51615)'%20style='mix-blend-mode:multiply'%3e%3cpath%20d='M446.039%2030.9493C452.969%2024.0741%20463.959%2020.5225%20473.389%2022.9351C487.939%2026.6523%20494.659%2043.5091%20483.529%2054.4847C478.039%2059.9%20472.169%2065.5328%20464.769%2067.2206C456.149%2069.1982%20446.529%2064.7976%20442.129%2056.8662C436.589%2046.8846%20439.489%2037.4519%20446.039%2030.9493Z'%20fill='white'/%3e%3c/g%3e%3cg%20filter='url(%23filter1_f_40000300_51615)'%20style='mix-blend-mode:multiply'%3e%3cpath%20d='M52.6109%20115.191C57.0109%20111.846%2062.2309%20111.701%2067.4009%20113.544C72.5609%20115.377%2076.3409%20121.517%2074.6009%20126.87C70.9509%20138.125%2044.4209%20148.407%2044.5709%20130.018C44.6109%20124.737%2048.5009%20118.318%2052.6109%20115.191Z'%20fill='white'/%3e%3c/g%3e%3cpath%20d='M719.93%2039.5242C721.18%2035.5585%20724.55%2032.359%20728.45%2031.1683C747.05%2025.5252%20758.1%2055.8944%20737.94%2061.3512C732.55%2062.8111%20725.97%2057.8307%20722.58%2053.2541C720.27%2050.1374%20718.11%2045.3019%20719.93%2039.5242Z'%20fill='%2346A4FB'/%3e%3cdefs%3e%3cfilter%20id='filter0_f_40000300_51615'%20x='435.203'%20y='18.1797'%20width='57.8828'%20height='53.512'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51615'/%3e%3c/filter%3e%3cfilter%20id='filter1_f_40000300_51615'%20x='40.5703'%20y='108.363'%20width='38.459'%20height='35.7329'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51615'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e") 110% top / 95%, url("data:image/svg+xml,%3csvg%20width='1092'%20height='275'%20viewBox='0%200%201092%20275'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M536.28%20271.354C523.18%20211.124%20436.87%20185.874%20347.68%20206.984C266.47%20226.204%20181.5%20208.844%20203.29%20147.004C209.18%20130.274%20218.7%20113.414%20217.36%2096.2335C212.31%2031.7835%2089.45%207.64354%200%2027.8035V274.364H536.88C536.69%20273.354%20536.49%20272.344%20536.28%20271.354Z'%20fill='white'/%3e%3cpath%20d='M612.83%20187.612C454.57%20180.572%20345.76%20279.972%20202.24%20237.722C51.89%20193.462%20220.06%2053.2223%200%2074.0723V274.352H806.41C792.22%20229.862%20724.78%20192.592%20612.83%20187.612Z'%20fill='%234AD2FB'/%3e%3cg%20filter='url(%23filter0_f_40000300_51625)'%3e%3cpath%20d='M820.658%20203.102C820.558%20211.032%20823.038%20219.022%20827.838%20225.352C835.818%20235.892%20849.048%20241.212%20862.078%20243.462C875.268%20245.742%20888.918%20245.352%20901.958%20242.342C920.788%20237.992%20935.908%20226.542%20952.208%20216.512C966.648%20207.632%20989.018%20202.682%201002.21%20190.682C1022.54%20172.182%201035.65%20135.342%201010.6%20132.292C1000.54%20131.072%20985.468%20141.262%20979.038%20144.292C967.218%20149.852%20947.928%20155.402%20936.368%20157.622C906.668%20163.332%20892.528%20158.972%20863.558%20163.532C846.948%20166.142%20828.338%20175.202%20822.508%20192.192C821.308%20195.702%20820.698%20199.402%20820.648%20203.102H820.658Z'%20fill='%2390C6FF'/%3e%3c/g%3e%3cpath%20d='M592.43%20199.683C591.98%20204.533%20593%20209.413%20596.04%20213.163C598.18%20215.803%20601.11%20217.683%20604.13%20219.243C618.03%20226.453%20644.28%20230.243%20657.48%20219.033C668.83%20209.393%20675.99%20188.093%20666.95%20175.073C660.34%20165.543%20647.13%20162.523%20635.75%20164.753C619.45%20167.943%20603%20174.903%20595.12%20190.433C593.67%20193.283%20592.72%20196.483%20592.42%20199.693L592.43%20199.683Z'%20fill='%234A96FB'/%3e%3cg%20filter='url(%23filter1_f_40000300_51625)'%3e%3cpath%20d='M914.788%20129.094C917.708%20137.174%20927.418%20143.194%20934.138%20140.054C945.668%20134.654%20957.218%20116.884%20949.908%20102.634C944.828%2092.7344%20930.818%2099.7744%20925.998%20103.194C916.358%20110.034%20911.238%20119.264%20914.798%20129.094H914.788Z'%20fill='%23AEEBFF'/%3e%3c/g%3e%3cg%20filter='url(%23filter2_f_40000300_51625)'%3e%3cpath%20d='M1065.13%204.11424C1074.38%204.64424%201083.52%207.38424%201086.3%2016.0642C1089.27%2025.3342%201083.2%2031.3242%201075.92%2035.9342C1066.59%2041.8442%201057.13%2047.2642%201049.39%2055.3242C1045.91%2058.9542%201042.9%2063.0242%201039.38%2066.6142C1033.62%2072.4942%201025.82%2075.6142%201018.71%2079.6742C1012.58%2083.1742%201007.38%2088.1742%201001.93%2092.6742C997.718%2096.1542%20977.258%20105.614%20975.868%2095.4442C975.448%2092.4042%20976.368%2088.2842%20979.928%2083.3942C986.028%2075.0042%20995.718%2074.1142%201002.53%2066.2642C1005.44%2062.9042%201007.68%2058.6642%201007.44%2054.2242C1007.03%2046.8642%201000.2%2043.1442%20998.208%2036.5542C993.338%2020.4842%201015.77%2011.0442%201026.88%207.67424C1033.7%205.60424%201041.77%205.57424%201048.87%204.80424C1053.24%204.32424%201059.21%203.76424%201065.14%204.10424L1065.13%204.11424Z'%20fill='%23AEEBFF'/%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_f_40000300_51625'%20x='818.648'%20y='130.191'%20width='207.68'%20height='116.735'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='1'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3cfilter%20id='filter1_f_40000300_51625'%20x='909.664'%20y='93.5586'%20width='46.5312'%20height='51.3429'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3cfilter%20id='filter2_f_40000300_51625'%20x='971.773'%20y='0'%20width='119.297'%20height='104.02'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeGaussianBlur%20stdDeviation='2'%20result='effect1_foregroundBlur_40000300_51625'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e") left bottom / 75%, linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
+      background-repeat: no-repeat;
+    }
+
+    .ats-detail__h {
+      margin-bottom: calc(var(--spacing) * 8);
+    }
+
+    .ats-detail__lead {
+      text-align: center;
+    }
+
+    .ats-detail__lead br {
+      display: block;
+    }
   }
 
   .ats-nav-sales {
-    background: hsl(var(--bg-light-blue));
+    background: hsl();
   }
 
   .ats-overview {
@@ -1806,7 +2057,7 @@
 
   @media (min-width: 64rem) {
     .ats-overview__grid {
-      grid-template-rows: auto auto;
+      grid-template-rows: auto 1fr;
       grid-template-columns: auto 1fr;
     }
 
@@ -1932,10 +2183,43 @@
   }
 
   .ats-plans {
-    background: hsl(var(--bg-pale-blue));
+    padding-block: calc(var(--spacing) * 8);
+    --bg-plan: 207 64 95;
+    background: hsl(var(--bg-plan));
+  }
+
+  .ats-c-planlist {
+    grid-template-columns: auto;
+    display: grid;
+  }
+
+  .ats-c-planlist__item:not(:first-of-type) {
+    margin-top: calc(var(--spacing) * 6);
+  }
+
+  @media (min-width: 48rem) {
+    .ats-plans {
+      padding-block: calc(var(--spacing) * 16);
+    }
+
+    .ats-c-planlist {
+      column-gap: calc(var(--spacing) * 6);
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ats-c-planlist__item:not(:first-of-type) {
+      margin-top: 0;
+    }
+
+    .ats-c-planlist__item, .ats-c-planlist__card {
+      grid-row: span 3 / span 3;
+      grid-template-rows: subgrid;
+      display: grid;
+    }
   }
 
   .ats-faq {
+    padding-block: calc(var(--spacing) * 12);
     background: #c0e5fc;
   }
 
@@ -1979,6 +2263,12 @@
   }
 
   @media (min-width: 48rem) {
+    @media (min-width: 48rem) {
+      .ats-faq {
+        padding-block: calc(var(--spacing) * 16);
+      }
+    }
+
     .ats-faq__q {
       font-size: 1.125rem;
     }
@@ -1990,7 +2280,13 @@
   }
 
   .ats-notes {
+    padding-block: calc(var(--spacing) * 12);
     background: #f8fafc;
+  }
+
+  .ats-notes__subsect {
+    max-width: 800px;
+    margin-inline: auto;
   }
 
   .ats-notes__subsect-h {
@@ -2023,8 +2319,32 @@
     text-decoration: underline;
   }
 
-  .ats-vacant-inq, .ats-related {
+  @media (min-width: 48rem) {
+    .ats-notes {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+
+  .ats-vacant-inq {
+    padding-block: calc(var(--spacing) * 6);
     background: hsl(var(--bg-white));
+  }
+
+  @media (min-width: 48rem) {
+    .ats-vacant-inq {
+      padding-block: calc(var(--spacing) * 16);
+    }
+  }
+
+  .ats-related {
+    padding-block: calc(var(--spacing) * 12);
+    background: hsl(var(--bg-white));
+  }
+
+  @media (min-width: 48rem) {
+    .ats-related {
+      padding-block: calc(var(--spacing) * 16);
+    }
   }
 }
 

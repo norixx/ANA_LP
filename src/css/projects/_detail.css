@@ -1,11 +1,19 @@
 .ats-detail {
+  --bg-start: 227 100 95;
+  --bg-end: 188 100 87;
+
   @apply pt-24 pb-20;
+  background:
+    url(../../img/detail-bg-top.svg) 110% top / 130%,
+    url(../../img/detail-bg-btm.svg) left bottom / 110%,
+    linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
+  background-repeat: no-repeat;
 }
 
+
 .ats-detail__h {
-  @apply font-ja-alt;
-  color: var(--text-accent);
-  font-weight: bold;
+  @apply font-ja-alt text-center font-bold mb-6;
+  color: hsl(var(--text-primary));
   /*
   傾き(vw) = (フォント最大px - フォント最小px) / (画面最大幅px - 画面最小幅px) * 100
         = (56 - 28) / (1440 - 375) * 100
@@ -20,9 +28,38 @@
   font-size: clamp(1.6rem, 3vw + 1rem, 3.5rem);
 }
 
+.ats-detail__lead {
+  @apply font-medium;
+  font-family: var(--font-ja-alt);
+  line-height: 2.3;
+}
+
+.ats-detail__lead br {
+  @apply hidden;
+}
+
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
   .ats-detail {
     @apply py-24;
+
+    background:
+      url(../../img/detail-bg-airplane.svg) 110% top / 95%,
+      url(../../img/detail-bg-top.svg) 110% top / 95%,
+      url(../../img/detail-bg-btm.svg) left bottom / 75%,
+      linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
+    background-repeat: no-repeat;
+  }
+
+  .ats-detail__h {
+    @apply mb-8;
+  }
+
+  .ats-detail__lead {
+    @apply text-center;
+  }
+
+  .ats-detail__lead br {
+    @apply block;
   }
 }

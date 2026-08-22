@@ -77,7 +77,7 @@
   place-items: center;
   place-content: center;
   grid-template-columns: auto auto;
-  color: hsl(var(--text-accent));
+  color: hsl(var(--text-primary));
 }
 
 .ats-mv__sale-countdown dd>div:first-of-type .ats-mv__sale-countdown-box {
@@ -105,7 +105,7 @@
   background: hsla(var(--bg-white)/.9);
   border-radius: 20px;
   padding: 1rem;
-  color: hsl(var(--text-accent));
+  color: hsl(var(--text-primary));
 }
 
 .ats-mv__boarding-period-title {
