@@ -1,10 +1,10 @@
 .ats-c-btn {
-  @apply text-base font-bold rounded-full border-none text-center decoration-0 justify-center items-center inline-flex leading-none whitespace-nowrap gap-2 cursor-pointer;
-  padding: 0.75rem 1.5rem;
+  @apply rounded-full border-none text-center decoration-0 justify-center items-center inline-flex leading-none whitespace-nowrap gap-2 cursor-pointer py-2 px-6;
   /* text-decoration: none; */
   transition: all .3s ease;
   color: hsl(var(--text-white));
   box-shadow: 0 .25rem .25rem hsla(var(--bg-black) / .12);
+  font-size: .875rem;
 }
 
 /* Style(color) ========== */
@@ -21,12 +21,18 @@
 }
 
 .ats-c-btn--accent-orange {
+  @apply font-bold;
   background: linear-gradient(to right bottom, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
 }
 
 /* Size */
 .ats-c-btn--lg {
-  padding: 1rem 1.5rem;
+  @apply py-3 px-6;
+}
+
+.ats-c-btn--xl {
+  @apply py-4 px-6;
+  font-size: 1.125rem;
 }
 
 .ats-c-btn--w-full {
@@ -37,29 +43,49 @@
   @apply w-auto;
 }
 
+/* Text */
+.ats-c-btn--font-700 {
+  @apply font-bold;
+}
+
 
 /* Child */
 .ats-c-btn__content-fill {
-  flex: 1;
+  @apply grow;
 }
 
-/* Icon: refer to _icons.css for icon design */
-.ats-c-btn--i-r-arrow-down {
-  gap: .5rem;
+/* Icon: 
+refer to _icons.css for icon design */
+[class*="ats-c-btn--i-"] {
+  @apply gap-2;
 }
 
-.ats-c-btn--i-r-arrow-down::after {
-  content: '';
+[class*="ats-c-btn--i-"]::before,
+[class*="ats-c-btn--i-"]::after {
+  @apply flex items-center justify-center;
+  /* content: ''; */
+  @apply w-5 h-5;
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  width: 1.5rem;
-  height: 1.5rem;
+  background-color: currentColor;
 }
 
 .ats-c-btn--i-r-arrow-down::after {
-  background-color: hsl(var(--bg-white));
+  @apply w-6 h-6;
+  content: '';
+
   mask-image: var(--ats-icon-arrow-down);
+}
+
+.ats-c-btn--i-calendar::before {
+  content: '';
+  mask-image: var(--ats-icon-calendar);
+}
+
+.ats-c-btn--i-alert::before {
+  content: '';
+  mask-image: var(--ats-icon-alert);
 }
 
 @media (min-width: theme(--breakpoint-md)) {

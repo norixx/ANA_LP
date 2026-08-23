@@ -55,6 +55,7 @@
 
 .ats-c-plan-card__feature {
   @apply flex gap-2 flex-wrap;
+  margin-bottom: 10px;
 }
 
 .ats-c-plan-card__feature-item {
@@ -140,6 +141,7 @@
 .ats-c-plan-card__action {
   @apply grid gap-y-4 gap-x-5;
   grid-template-columns: repeat(2, 1fr);
+  container: action / inline-size;
 }
 
 .ats-c-plan-card__action-main {
@@ -150,7 +152,15 @@
 .ats-c-plan-card__action-sub {
   @apply grid gap-4;
   grid-column: span 2;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto;
+}
+
+@container action (min-width: 21rem) {
+  .ats-c-plan-card__action-sub {
+    @apply grid gap-4;
+    grid-column: span 2;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 

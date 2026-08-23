@@ -2,10 +2,14 @@
   --bg-start: 227 100 95;
   --bg-end: 188 100 87;
 
-  @apply pt-24 pb-20;
+  @apply pt-28 pb-20;
   background:
-    url(../../img/detail-bg-top.svg) 110% top / 130%,
-    url(../../img/detail-bg-btm.svg) left bottom / 110%,
+    url(../../img/detail-bg-map.svg) 40% 40px / clamp(40px, 10vw, 60px),
+    url(../../img/detail-bg-passport.svg) 70% -10px / clamp(45px, 10vw, 60px),
+    url(../../img/detail-bg-ticket.svg) -1% 70px / clamp(40px, 10vw, 60px),
+    url(../../img/detail-bg-trunk.svg) 95% 80px / clamp(45px, 10vw, 80px),
+    url(../../img/detail-bg-top.svg) 65% top / 150%,
+    url(../../img/detail-bg-btm.svg) left bottom / 118%,
     linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
   background-repeat: no-repeat;
 }
@@ -38,15 +42,74 @@
   @apply hidden;
 }
 
+.ats-detail__list {
+  @apply mt-12 flex flex-col;
+}
+
+.ats-detail__item {
+  @apply flex flex-col gap-6 pb-8;
+}
+
+.ats-detail__item:not(:last-of-type) {
+  @apply mb-6;
+  border-bottom: 1px solid hsl(var(--bdr-blue));
+}
+
+.ats-detail__item-img-area {
+  @apply overflow-hidden aspect-square mx-auto relative;
+  width: clamp(280px, 60vw, 400px);
+}
+
+.ats-detail__item-img-area::before {
+  --base-size: 70px;
+  --base-gap: 10px;
+  --size: 70px;
+  /* 👇️背景ポジション: 現サイズ + 現余白( = 比率 * 余白) */
+  --bg-position: calc(var(--size) + var(--size) / var(--base-size) * var(--base-gap));
+  @apply absolute aspect-square;
+  content: '';
+  left: 1px;
+  top: 13px;
+  background: url(../../img/detail-list-num.svg) no-repeat left top / auto 100%;
+  width: var(--size);
+  height: var(--size);
+}
+
+.ats-detail__item:nth-of-type(2) .ats-detail__item-img-area::before {
+  background-position-x: calc(var(--bg-position) * -1);
+}
+
+.ats-detail__item:nth-of-type(3) .ats-detail__item-img-area::before {
+  background-position-x: calc(var(--bg-position) * -2);
+}
+
+.ats-detail__item-img {
+  @apply w-full h-full rounded-full object-cover object-center;
+}
+
+.ats-detail__item-desc {
+  flex: 1;
+}
+
+.ats-detail__item-title {
+  @apply font-bold text-2xl mb-2;
+}
+
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
   .ats-detail {
     @apply py-24;
 
     background:
-      url(../../img/detail-bg-airplane.svg) 110% top / 95%,
-      url(../../img/detail-bg-top.svg) 110% top / 95%,
-      url(../../img/detail-bg-btm.svg) left bottom / 75%,
+      url(../../img/detail-bg-airplane.svg) 80% 160px / clamp(50px, 10vw, 80px),
+      url(../../img/detail-bg-map.svg) 5% 10% / clamp(50px, 10vw, 100px),
+      url(../../img/detail-bg-passport.svg) 70% -20px / clamp(50px, 10vw, 72px),
+      url(../../img/detail-bg-pin.svg) 15% 300px / clamp(50px, 10vw, 70px),
+      url(../../img/detail-bg-staircar.svg) 90% 300px / clamp(90px, 10vw, 120px),
+      url(../../img/detail-bg-ticket.svg) -1% 340px / clamp(90px, 10vw, 62px),
+      url(../../img/detail-bg-trunk.svg) 95% 180px / clamp(80px, 10vw, 100px),
+      url(../../img/detail-bg-top.svg) 120% top / clamp(600px, 90%, 1600px),
+      url(../../img/detail-bg-btm.svg) left bottom / clamp(600px, 75%, 1200px),
       linear-gradient(to bottom, hsl(var(--bg-start)), hsl(var(--bg-end)));
     background-repeat: no-repeat;
   }
@@ -61,5 +124,17 @@
 
   .ats-detail__lead br {
     @apply block;
+  }
+
+  .ats-detail__item {
+    @apply gap-9 flex-row items-center pb-6;
+  }
+
+  .ats-detail__item--alt {
+    @apply flex-row-reverse;
+  }
+
+  .ats-detail__item-img-area {
+    width: clamp(160px, 30vw, 280px);
   }
 }

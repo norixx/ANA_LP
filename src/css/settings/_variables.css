@@ -4,9 +4,9 @@
   interpolate-size: allow-keywords;
 }
 
-.lp-ats {
+.ats-root {
 
-  /* Display */
+  /* Display(SVG icons.svgでのみ使用) */
   --d-md-block: none;
   --d-lg-block: none;
 
@@ -231,6 +231,7 @@
   --bdr-light: var(--Mono-300);
   --bdr-normal: var(--Mono-600);
   --bdr-black: var(--Mono-1300);
+  --bdr-blue: var(--Blue-300);
   --bdr-light-blue: var(--Navy-400);
 
   --bdr-tag-economy: var(--Green-1000);

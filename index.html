@@ -7,7 +7,7 @@
 
 <body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-screen">
 
-  <div class="lp-ats">
+  <div class="ats-root">
 
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -137,7 +137,7 @@
             旅先の楽しみをもっと。</h2>
           <div class="ats-overview__linkarea">
             <a href="#"
-              class="ats-c-btn ats-c-btn--primary ats-c-btn--lg ats-c-btn--i-r-arrow-down ats-c-btn--w-full ats-c-btn--w-lg-full ats-c-btn--w-md-auto">
+              class="ats-c-btn ats-c-btn--primary ats-c-btn--lg ats-c-btn--i-r-arrow-down ats-c-btn--w-full ats-c-btn--w-lg-full ats-c-btn--w-md-auto ats-c-btn--font-700">
               <span class="ats-c-btn__content-fill">ANAタイムセールの旅を見る</span>
             </a>
           </div>
@@ -267,11 +267,13 @@
                   </div>
                   <div class="ats-c-plan-card__action">
                     <div class="ats-c-plan-card__action-main">
-                      <a href="" class="ats-c-btn ats-c-btn--primary ats-c-btn--w-full">空席・運賃を確認</a>
+                      <a href="#" class="ats-c-btn ats-c-btn--lg ats-c-btn--primary ats-c-btn--w-full">空席・運賃を確認</a>
                     </div>
                     <div class="ats-c-plan-card__action-sub">
-                      <a href="" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">カレンダー</a>
-                      <a href="" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">除外期間・詳細</a>
+                      <a href="#"
+                        class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full ats-c-btn--i-calendar">カレンダー</a>
+                      <a href="#"
+                        class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full ats-c-btn--i-alert">除外期間・詳細</a>
                     </div>
                   </div>
                 </div>
@@ -317,11 +319,11 @@
                   </div>
                   <div class="ats-c-plan-card__action">
                     <div class="ats-c-plan-card__action-main">
-                      <a href="" class="ats-c-btn ats-c-btn--primary ats-c-btn--w-full">空席・運賃を確認</a>
+                      <a href="#" class="ats-c-btn ats-c-btn--lg ats-c-btn--primary ats-c-btn--w-full">空席・運賃を確認</a>
                     </div>
                     <div class="ats-c-plan-card__action-sub">
-                      <a href="" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">カレンダー</a>
-                      <a href="" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">除外期間・詳細</a>
+                      <a href="#" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">カレンダー</a>
+                      <a href="#" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full">除外期間・詳細</a>
                     </div>
                   </div>
                 </div>
@@ -351,10 +353,31 @@
             <div class="ats-faq__item">
               <dt class="ats-faq__q">
                 <span class="ats-faq__q-text">タイムセールの搭乗期間はいつですか？</span>
-                <button type="button" class="js-ats-faq-toggle"></button>
+                <button type="button" class="ats-faq__toggle js-ats-faq-toggle"></button>
               </dt>
               <dd class="ats-faq__a">
-                タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+                <span class="ats-faq__a-text">タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+                </span>
+              </dd>
+            </div>
+            <div class="ats-faq__item">
+              <dt class="ats-faq__q">
+                <span class="ats-faq__q-text">タイムセールの搭乗期間はいつですか？</span>
+                <button type="button" class="ats-faq__toggle js-ats-faq-toggle"></button>
+              </dt>
+              <dd class="ats-faq__a">
+                <span class="ats-faq__a-text">タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+                </span>
+              </dd>
+            </div>
+            <div class="ats-faq__item">
+              <dt class="ats-faq__q">
+                <span class="ats-faq__q-text">タイムセールの搭乗期間はいつですか？</span>
+                <button type="button" class="ats-faq__toggle js-ats-faq-toggle"></button>
+              </dt>
+              <dd class="ats-faq__a">
+                <span class="ats-faq__a-text">タイムセールで予約できる搭乗期間は、セールごとに異なります。搭乗期間はタイムセールのページに記載されているので、予約前に必ずご確認ください。
+                </span>
               </dd>
             </div>
           </dl>
@@ -468,8 +491,48 @@
             浮いた予算を旅先での食事、アクティビティ、買い物などに回せます。
           </p>
         </header>
-        <div class="ats-c-sect__body ats-detail__body">
-          body
+        <div class="ats-detail__body">
+          <ul class="ats-detail__list">
+            <li class="ats-detail__item">
+              <div class="ats-detail__item-img-area">
+                <img src="src/img/detail-list-01.webp" alt="" class="ats-detail__item-img">
+              </div>
+              <dl class="ats-detail__item-desc">
+                <dt class="ats-detail__item-title">
+                  行き先を選びやすい！
+                </dt>
+                <dd class="ats-detail__item-detail">
+                  全国各地への路線や便数を活かして、週末旅・帰省・家族旅行など、予定に合わせた行き先を検討できます。
+                </dd>
+              </dl>
+            </li>
+            <li class="ats-detail__item ats-detail__item--alt">
+              <div class="ats-detail__item-img-area">
+                <img src="src/img/detail-list-02.webp" alt="" class="ats-detail__item-img">
+              </div>
+              <dl class="ats-detail__item-desc">
+                <dt class="ats-detail__item-title">
+                  移動がスムーズで快適！
+                </dt>
+                <dd class="ats-detail__item-detail">
+                  空港までのアクセスや空港内の導線、手荷物周りの使いやすさも、ANAで旅する安心感につながります。
+                </dd>
+              </dl>
+            </li>
+            <li class="ats-detail__item">
+              <div class="ats-detail__item-img-area">
+                <img src="src/img/detail-list-03.webp" alt="" class="ats-detail__item-img">
+              </div>
+              <dl class="ats-detail__item-desc">
+                <dt class="ats-detail__item-title">
+                  旅先で使える・楽しめる予算アップ！
+                </dt>
+                <dd class="ats-detail__item-detail">
+                  航空券をおトクにできた分、現地の食事、アクティビティ、買い物など、旅先での体験に予算を回せます。
+                </dd>
+              </dl>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

@@ -9,53 +9,60 @@
 }
 
 .ats-faq__item {
+  @apply p-4 rounded-lg;
   background: hsl(var(--bg-white));
-  padding: 1rem;
-  border-radius: .5rem;
+}
+
+
+.ats-faq__q,
+.ats-faq__a {
+  @apply flex gap-2;
 }
 
 .ats-faq__q {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+  @apply font-bold mb-3 pb-3;
   font-size: 1rem;
+  border-bottom: 1px solid hsl(var(--bdr-light));
 }
 
-.ats-faq__q-text {
-  display: flex;
-  gap: .5rem;
-}
-
-.ats-faq__q-text::before,
+.ats-faq__q::before,
 .ats-faq__a::before {
-  width: 30px;
-  height: 30px;
-  border-radius: var(--radius-100);
-  line-height: 1;
+  --base-size: 36px;
+  --base-gap: 10px;
+  --size: 30px;
+  /* 👇️背景ポジション: 現サイズ + 現余白( = 比率 * 余白) */
+  --bg-position: calc(var(--size) + var(--size) / var(--base-size) * var(--base-gap));
+
+  @apply aspect-square rounded-full block overflow-hidden;
+  content: '';
   flex-shrink: 0;
+  background: url(../../img/faq-icon-qa.svg) no-repeat left top / auto 100%;
+  width: var(--size);
+  height: var(--size);
 }
 
-.ats-faq__q-text::before {
-  content: 'Q';
-  background-color: hsl(var(--bg-primary));
-  color: hsl(var(--text-white));
-  display: grid;
-  place-items: center;
+
+.ats-faq__a::before {
+  background-position-x: calc(var(--bg-position) * -1);
+}
+
+.ats-faq__q-text,
+.ats-faq__a-text {
+  @apply flex-grow;
 }
 
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
   .ats-faq {
-    @apply md:py-16;
+    @apply py-16;
   }
 
   .ats-faq__q {
-    font-size: 1.125rem;
+    @apply text-lg mb-4 pb-4;
   }
 
-  .ats-faq__q::before,
-  .ats-faq__a::before {
-    width: 36px;
-    height: 36px;
+  .ats-faq__q-text::before,
+  .ats-faq__a-text::before {
+    --size: 36px;
   }
 }
