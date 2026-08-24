@@ -1,4 +1,10 @@
-.lp-ats {
+/* Settings */
+:root {
+  /* アニメーション設定 */
+  interpolate-size: allow-keywords;
+}
+
+.ats-root {
   @apply font-ja leading-normal;
   color: hsl(var(--text-main));
 }

@@ -1,9 +1,3 @@
-/* Settings */
-:root {
-  /* アニメーション設定 */
-  interpolate-size: allow-keywords;
-}
-
 .ats-root {
 
   /* Display(SVG icons.svgでのみ使用) */

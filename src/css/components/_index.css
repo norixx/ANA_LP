@@ -4,4 +4,3 @@
 @import './_sections.css' layer(components);
 @import './_buttons.css' layer(components);
 @import './_plan-card.css' layer(components);
-@import './_utils.css' layer(components);

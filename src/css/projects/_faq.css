@@ -4,8 +4,7 @@
 }
 
 .ats-faq__list {
-  display: grid;
-  gap: .5rem;
+  @apply grid gap-2;
 }
 
 .ats-faq__item {
@@ -15,14 +14,38 @@
 
 
 .ats-faq__q,
-.ats-faq__a {
-  @apply flex gap-2;
+.ats-faq__a,
+.ats-faq__q::after {
+  transition: all .3s;
 }
 
+.ats-faq__q,
+.ats-faq__a {
+  @apply flex gap-2;
+  transition: all .3s;
+}
+
+
 .ats-faq__q {
-  @apply font-bold mb-3 pb-3;
+  @apply font-bold relative;
   font-size: 1rem;
-  border-bottom: 1px solid hsl(var(--bdr-light));
+}
+
+.ats-faq__q::after {
+  @apply absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: hsl(var(--bdr-light));
+  scale: 0 1;
+  transform-origin: left bottom;
+}
+
+.ats-faq__a {
+  @apply overflow-hidden h-0;
+
 }
 
 .ats-faq__q::before,
@@ -51,6 +74,31 @@
   @apply flex-grow;
 }
 
+.ats-faq__toggle {
+  @apply shrink-0 cursor-pointer border-none bg-transparent p-0 aspect-square self-center;
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  background: hsl(var(--bg-primary));
+  mask: var(--ats-icon-plus) no-repeat center center / contain;
+}
+
+/* js */
+.ats-faq__item.is-open .ats-faq__q {
+  @apply mb-3 pb-3;
+}
+
+.ats-faq__item.is-open .ats-faq__q::after {
+  scale: 1 1;
+}
+
+.ats-faq__item.is-open .ats-faq__a {
+  height: auto;
+}
+
+
+
+
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
   .ats-faq {
@@ -58,11 +106,16 @@
   }
 
   .ats-faq__q {
-    @apply text-lg mb-4 pb-4;
+    font-size: 1.125rem;
   }
 
-  .ats-faq__q-text::before,
-  .ats-faq__a-text::before {
+  .ats-faq__q::before,
+  .ats-faq__a::before {
     --size: 36px;
+  }
+
+  /* js */
+  .ats-faq__item.is-open .ats-faq__q {
+    @apply mb-4 pb-4;
   }
 }
