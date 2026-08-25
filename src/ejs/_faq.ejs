@@ -1,0 +1,16 @@
+<% faqs.forEach((faq, index)=> { %>
+  <div class="ats-faq__item js-ats-faq__item">
+    <dt class="ats-faq__q">
+      <span class="ats-faq__q-text">
+        <%= faq.question %>
+      </span>
+      <button type="button" class="ats-faq__toggle js-ats-faq__toggle" aria-label="回答を開く"
+        aria-controls="faq-answer-<%= faq.id || index %>" aria-expanded="false"></button>
+    </dt>
+    <dd class="ats-faq__a js-ats-faq__a" id="faq-answer-<%= faq.id || index %>" role="region" aria-hidden="true">
+      <span class="ats-faq__a-text">
+        <%= faq.answer %>
+      </span>
+    </dd>
+  </div>
+  <% }); %>

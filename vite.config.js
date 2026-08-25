@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import tailwindcss from '@tailwindcss/vite';
+import faqData from './src/data/faq.json';
 
 export default defineConfig({
   root: './',
@@ -43,6 +44,7 @@ export default defineConfig({
     ViteEjsPlugin({
       // EJSテンプレートに渡すデータオブジェクト (グローバル変数)
       title: "モダンLP開発環境 | Vite + EJS + Tailwind CSS + Alpine.js",
+      faqs: faqData,
     }),
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,

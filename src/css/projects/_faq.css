@@ -96,7 +96,9 @@
   height: auto;
 }
 
-
+.ats-faq__item.is-open .ats-faq__toggle {
+  mask-image: var(--ats-icon-minus);
+}
 
 
 /* md */

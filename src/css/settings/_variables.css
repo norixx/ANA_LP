@@ -220,6 +220,9 @@
   --bg-black: var(--Mono-1300);
   --bg-xlight-indigo: var(--Indigo-100);
 
+  --bg-tag-members: linear-gradient(to right, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
+  --bg-tag-benefit: var(--bg-yellow);
+
   /* Border Color */
   --bdr-primary: var(--corporate);
   --bdr-light: var(--Mono-300);
@@ -230,6 +233,8 @@
 
   --bdr-tag-economy: var(--Green-1000);
   --bdr-tag-popular: var(--Orange-700);
+  --bdr-tag-members: var(--Red-300);
+  --bdr-tag-benefit: var(--Yellow-600);
 
   /* Line Height */
   /* 
