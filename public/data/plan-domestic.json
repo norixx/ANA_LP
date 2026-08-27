@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "https://picsum.photos/id/1011/600/400",
+    "tags": [
+      "エコノミー",
+      "人気"
+    ],
+    "destination": "羽田⇄沖縄(那覇)",
+    "features": [
+      "往復航空券",
+      "羽田発"
+    ],
+    "city": "那覇",
+    "prices": [
+      35800
+    ]
+  },
+  {
+    "id": 2,
+    "thumbnail": "https://picsum.photos/id/1015/600/400",
+    "tags": [
+      "エコノミー",
+      "会員限定クーポン対象"
+    ],
+    "destination": "羽田⇄北海道(新千歳)",
+    "features": [
+      "往復航空券",
+      "羽田発",
+      "早期予約割引"
+    ],
+    "city": "札幌",
+    "prices": [
+      24800,
+      27800
+    ]
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://picsum.photos/id/1021/600/400",
+    "tags": [
+      "人気",
+      "特典付きプラン対象ホテル"
+    ],
+    "destination": "伊丹⇄福岡",
+    "features": [
+      "往復航空券",
+      "伊丹発"
+    ],
+    "city": "福岡",
+    "prices": [
+      18800
+    ]
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://picsum.photos/id/1035/600/400",
+    "tags": [
+      "エコノミー",
+      "会員限定クーポン対象"
+    ],
+    "destination": "羽田⇄鹿児島",
+    "features": [
+      "往復航空券",
+      "羽田発",
+      "手荷物無料"
+    ],
+    "city": "鹿児島",
+    "prices": [
+      28800,
+      32800
+    ]
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://picsum.photos/id/1043/600/400",
+    "tags": [
+      "人気"
+    ],
+    "destination": "中部⇄沖縄(那覇)",
+    "features": [
+      "往復航空券",
+      "中部発",
+      "早期予約割引"
+    ],
+    "city": "那覇",
+    "prices": [
+      39800
+    ]
+  }
+]

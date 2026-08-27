@@ -9,25 +9,16 @@
 }
 
 .ats-c-sect__h {
-  @apply text-2xl font-bold mb-3;
+  @apply font-bold mb-3;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
-.ats-c-sect__body {}
-
-/* サブセクション */
-.ats-c-subsect__h {
-  @apply text-2xl font-bold mb-3 text-center;
-  line-height: 1.5;
-}
 
 @media (min-width: theme(--breakpoint-md)) {
   .ats-c-sect__h {
-    @apply text-4xl mb-6;
+    @apply mb-6;
+    font-size: 2.25rem;
   }
 
-  /* サブセクション */
-  .ats-c-subsect__h {
-    @apply text-4xl mb-6;
-  }
 }

@@ -1,3 +1,10 @@
+var __typeError = (msg) => {
+  throw TypeError(msg);
+};
+var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
+var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read from private field"), getter ? getter.call(obj) : member.get(obj));
+var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+var _clsOpen, _handleClick;
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -35,70 +42,6 @@
     fetch(link.href, fetchOpts);
   }
 })();
-const scriptRel = "modulepreload";
-const assetsURL = function(dep) {
-  return "/" + dep;
-};
-const seen = {};
-const __vitePreload = function preload(baseModule, deps, importerUrl) {
-  let promise = Promise.resolve();
-  if (deps && deps.length > 0) {
-    document.getElementsByTagName("link");
-    const cspNonceMeta = document.querySelector(
-      "meta[property=csp-nonce]"
-    );
-    const cspNonce = (cspNonceMeta == null ? void 0 : cspNonceMeta.nonce) || (cspNonceMeta == null ? void 0 : cspNonceMeta.getAttribute("nonce"));
-    promise = Promise.allSettled(
-      deps.map((dep) => {
-        dep = assetsURL(dep);
-        if (dep in seen) return;
-        seen[dep] = true;
-        const isCss = dep.endsWith(".css");
-        const cssSelector = isCss ? '[rel="stylesheet"]' : "";
-        if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
-          return;
-        }
-        const link = document.createElement("link");
-        link.rel = isCss ? "stylesheet" : scriptRel;
-        if (!isCss) {
-          link.as = "script";
-        }
-        link.crossOrigin = "";
-        link.href = dep;
-        if (cspNonce) {
-          link.setAttribute("nonce", cspNonce);
-        }
-        document.head.appendChild(link);
-        if (isCss) {
-          return new Promise((res, rej) => {
-            link.addEventListener("load", res);
-            link.addEventListener(
-              "error",
-              () => rej(new Error(`Unable to preload CSS for ${dep}`))
-            );
-          });
-        }
-      })
-    );
-  }
-  function handlePreloadError(err) {
-    const e = new Event("vite:preloadError", {
-      cancelable: true
-    });
-    e.payload = err;
-    window.dispatchEvent(e);
-    if (!e.defaultPrevented) {
-      throw err;
-    }
-  }
-  return promise.then((res) => {
-    for (const item of res || []) {
-      if (item.status !== "rejected") continue;
-      handlePreloadError(item.reason);
-    }
-    return baseModule().catch(handlePreloadError);
-  });
-};
 var flushPending = false;
 var flushing = false;
 var queue = [];
@@ -3552,25 +3495,58 @@ alpine_default.setRawEvaluator(normalRawEvaluator);
 alpine_default.setReactivityEngine({ reactive: reactive2, effect: effect2, release: stop, raw: toRaw });
 var src_default = alpine_default;
 var module_default = src_default;
-async function fetchCards() {
-  try {
-    const data2 = await __vitePreload(() => import("./cards-BsMlMvFE.js"), true ? [] : void 0);
-    return data2.default;
-  } catch (error2) {
-    console.error("Failed to load card data", error2);
-    return [];
+function planList() {
+  return {
+    plans: [],
+    async fetchPlans() {
+      const res = await fetch("/data/plan-domestic.json");
+      this.plans = await res.json();
+      console.log(this.plans);
+    },
+    tagClass(tag) {
+      const prefix2 = "ats-c-plan-card__tag--";
+      switch (tag) {
+        case "エコノミー":
+          return prefix2 + "economy";
+        case "人気":
+          return prefix2 + "popular";
+        case "会員限定クーポン対象":
+          return prefix2 + "members";
+        case "特典付きプラン対象ホテル":
+          return prefix2 + "benefit";
+        default:
+          return "";
+      }
+    }
+  };
+}
+class LPAccordion {
+  constructor(rootSelector = ".ats-root") {
+    __privateAdd(this, _clsOpen, "is-open");
+    __privateAdd(this, _handleClick, (e) => {
+      const target = e.target;
+      if (!target.classList.contains("js-ats-faq__toggle")) return;
+      const item = target.closest(".js-ats-faq__item");
+      const answer = item.querySelector(".js-ats-faq__a");
+      const isOpened = item.classList.contains(__privateGet(this, _clsOpen));
+      console.log(isOpened);
+      item.classList.toggle(__privateGet(this, _clsOpen), !isOpened);
+      target.setAttribute("aria-expanded", !isOpened);
+      target.setAttribute("aria-label", !isOpened ? "回答を閉じる" : "回答を開く");
+      answer.setAttribute("aria-hidden", isOpened);
+    });
+    this.root = document.querySelector(rootSelector);
+    this.faq = this.root.querySelector(".js-ats-faq");
+    if (!this.root || !this.faq) return;
+    this.init();
+  }
+  init() {
+    this.faq.addEventListener("click", __privateGet(this, _handleClick));
   }
 }
-document.addEventListener("alpine:init", () => {
-  module_default.data("cardApp", () => ({
-    cards: [],
-    isLoading: true,
-    async init() {
-      this.cards = await fetchCards();
-      this.isLoading = false;
-    }
-  }));
-});
+_clsOpen = new WeakMap();
+_handleClick = new WeakMap();
 window.Alpine = module_default;
+module_default.data("planList", planList);
 module_default.start();
-console.log("🚀 Vite + EJS + Tailwind CSS + Alpine.js (Self-hosted) Initialized!");
+new LPAccordion();

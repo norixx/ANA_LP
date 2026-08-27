@@ -14,28 +14,24 @@
   @apply col-span-12 lg:col-span-6;
 }
 
+.ats-mv__logo {
+  @apply mb-4;
+}
 
 .ats-mv__sale-period {
+  @apply flex items-center mb-4 rounded-full leading-none;
   background: hsl(var(--bg-accent-yellow));
-  border-radius: var(--radius-100);
-  display: flex;
   padding: 6px 20px;
-  align-items: center;
-  line-height: 1;
 }
 
 .ats-mv__sale-period dt {
-  font-weight: bold;
-  display: flex;
+  @apply flex font-bold;
 }
 
 .ats-mv__sale-period dd {
-  display: flex;
-  flex: 1;
+  @apply flex grow text-center font-bold;
   column-gap: 10px;
-  text-align: center;
   font-family: var(--font-ja-alt);
-  font-weight: bold;
   padding-left: 10px;
 }
 
@@ -46,6 +42,7 @@
 }
 
 .ats-mv__sale-date {
+  @apply grow;
   flex: 1;
 }
 
@@ -55,42 +52,41 @@
 
 /* カウントダウン */
 .ats-mv__sale-countdown {
+  @apply rounded-xl;
   background: hsla(var(--bg-primary)/.6);
   padding: .5rem 1rem 1rem 1rem;
 }
 
-.ats-mv__sale-countdown dt {
-  text-align: center;
+.ats-mv__sale-countdown-title {
+  @apply text-center font-bold mb-2;
   color: hsl(var(--text-white));
-  font-weight: bold;
 }
 
-.ats-mv__sale-countdown dd {
+.ats-mv__sale-countdown-desc {
+  @apply grid grid-cols-12;
   gap: 1px;
 }
 
 .ats-mv__sale-countdown-box {
+  @apply grid col-span-4 place-items-center place-content-center gap-2;
   background: hsl(var(--bg-white));
   padding-block: .875rem;
-  display: grid;
-  gap: .5rem;
-  place-items: center;
-  place-content: center;
   grid-template-columns: auto auto;
   color: hsl(var(--text-primary));
 }
 
-.ats-mv__sale-countdown dd>div:first-of-type .ats-mv__sale-countdown-box {
+.ats-mv__sale-countdown-box:first-of-type {
   border-radius: .5rem 0 0 .5rem;
 }
 
-.ats-mv__sale-countdown dd>div:last-of-type .ats-mv__sale-countdown-box {
+.ats-mv__sale-countdown-box:last-of-type {
   border-radius: 0 .5rem .5rem 0;
 }
 
 .ats-mv__sale-countdown-num {
   font-family: var(--font-en);
   font-size: 3rem;
+  line-height: 1;
   /*48px*/
 }
 

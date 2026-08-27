@@ -1,0 +1,60 @@
+<div class="ats-c-plan-card">
+  <img :src="plan.thumbnail" :alt="plan.city" class="ats-c-plan-card__image">
+  <div class="ats-c-plan-card__content">
+    <ul class="ats-c-plan-card__tag-list">
+      <template x-for="tag in plan.tags" :key="tag">
+        <li class="ats-c-plan-card__tag-item">
+          <span class="ats-c-plan-card__tag" x-text="tag" :class="tagClass(tag)"></span>
+        </li>
+      </template>
+    </ul>
+    <p class="ats-c-plan-card__title ats-c-plan-card__title--domestic" x-text="plan.destination"></p>
+    <ul class="ats-c-plan-card__feature">
+      <template x-for="feature in plan.features">
+        <li class="ats-c-plan-card__feature-item">
+          <span x-text="feature"></span>
+        </li>
+      </template>
+    </ul>
+    <p class="ats-c-plan-card__city" x-text="plan.city">那覇</p>
+    <dl class="ats-c-plan-card__period">
+      <dt class="ats-c-plan-card__period-label">【搭乗期間】</dt>
+      <dd class="ats-c-plan-card__period-date">2026年10月1日〜2026年12月25日</dd>
+    </dl>
+    <div class="ats-c-plan-card__sales-pitch">
+      <p class="ats-c-plan-card__sales-pitch-text">
+        ★沖縄で真夏の遊び満喫　ウォータースライド付きプールで楽しもう！
+      </p>
+    </div>
+    <ul class="ats-c-plan-card__price-list">
+      <li class="ats-c-plan-card__price-item">
+        <p class="ats-c-plan-card__price-label">2名1室利用 食事付き</p>
+        <p class="ats-c-plan-card__price">
+          <span class="ats-c-plan-card__price-value ats-c-plan-card__price-value--main">1,035,860</span>
+          <span class="ats-c-plan-card__price-type">(Economy Light)</span>
+        </p>
+        <p class="ats-c-plan-card__price-note">予約変更不可、払い戻し不可</p>
+      </li>
+      <li class="ats-c-plan-card__price-item">
+        <p class="ats-c-plan-card__price-label">ANAマイレージクラブ会員限定クーポンで※</p>
+        <p class="ats-c-plan-card__price">
+          <span class="ats-c-plan-card__price-value ">1,035,860</span>
+          <span class="ats-c-plan-card__price-type">(Economy Value)</span>
+        </p>
+        <p class="ats-c-plan-card__price-note">予約変更可（手数料あり）、払い戻し不可</p>
+      </li>
+    </ul>
+    <p class="ats-c-plan-card__note">
+      ご購入前に「除外期間・詳細を見る」をご確認ください。
+    </p>
+  </div>
+  <div class="ats-c-plan-card__action">
+    <div class="ats-c-plan-card__action-main">
+      <a href="#" class="ats-c-btn ats-c-btn--lg ats-c-btn--primary ats-c-btn--w-full">空席・運賃を確認</a>
+    </div>
+    <div class="ats-c-plan-card__action-sub">
+      <a href="#" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full ats-c-btn--i-calendar">カレンダー</a>
+      <a href="#" class="ats-c-btn ats-c-btn--primary-ol ats-c-btn--w-full ats-c-btn--i-alert">除外期間・詳細</a>
+    </div>
+  </div>
+</div>

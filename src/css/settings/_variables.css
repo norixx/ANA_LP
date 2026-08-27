@@ -221,7 +221,7 @@
   --bg-xlight-indigo: var(--Indigo-100);
 
   --bg-tag-members: linear-gradient(to right, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
-  --bg-tag-benefit: var(--bg-yellow);
+  --bg-tag-benefit: var(--Yellow-500);
 
   /* Border Color */
   --bdr-primary: var(--corporate);
