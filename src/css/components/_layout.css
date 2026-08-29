@@ -1,9 +1,23 @@
 .ats-l-container {
+  @apply mx-auto px-4;
   max-width: 1200px;
 
-  @apply mx-auto px-4 md:px-6 xl:px-0;
 }
 
 .ats-l-container--1080 {
   max-width: 1080px;
+}
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-l-container {
+    @apply px-6;
+  }
+}
+
+/* xl */
+@media (min-width: theme(--breakpoint-xl)) {
+  .ats-l-container {
+    @apply px-0;
+  }
 }

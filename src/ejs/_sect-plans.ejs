@@ -1,0 +1,48 @@
+<div class="ats-plans">
+  <div class="ats-l-container">
+    <div class="ats-plans__sect-container">
+      <section class="ats-c-sect">
+        <header class="ats-c-sect__header">
+          <h2 class="ats-c-sect__h">人気のセール路線・運賃</h2>
+        </header>
+        <div class="ats-c-sect__body">
+          <ul class="ats-c-plan-list" x-data="planList()" x-init="fetchPlans()">
+            <template x-for="plan in plans" :key="plan.id">
+              <li class="ats-c-plan-list__item">
+                <%- include('./_plan-card.ejs') %>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </section>
+      <section class="ats-c-sect">
+        <header class="ats-c-sect__header">
+          <h2 class="ats-c-sect__h">ANAオススメセール路線</h2>
+        </header>
+        <div class="ats-c-sect__body">
+          <ul class="ats-c-plan-list" x-data="planList()" x-init="fetchPlans()">
+            <template x-for="plan in plans" :key="plan.id">
+              <li class="ats-c-plan-list__item">
+                <%- include('./_plan-card.ejs') %>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </section>
+      <section class="ats-c-sect">
+        <header class="ats-c-sect__header">
+          <h2 class="ats-c-sect__h">日常を離れる、島旅へ</h2>
+        </header>
+        <div class="ats-c-sect__body">
+          <ul class="ats-c-plan-list" x-data="planList()" x-init="fetchPlans()">
+            <template x-for="plan in plans" :key="plan.id">
+              <li class="ats-c-plan-list__item">
+                <%- include('./_plan-card.ejs') %>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

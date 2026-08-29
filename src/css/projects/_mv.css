@@ -7,11 +7,11 @@
   max-width: 600px;
 
   @apply grid content-center px-4 grid-cols-12 gap-y-14 items-center mx-auto;
-  @apply lg:gap-x-16 xl:px-0;
+
 }
 
 .ats-mv__container-col {
-  @apply col-span-12 lg:col-span-6;
+  @apply col-span-12;
 }
 
 .ats-mv__logo {
@@ -24,26 +24,25 @@
   padding: 6px 20px;
 }
 
-.ats-mv__sale-period dt {
+.ats-mv__sale-period-title {
   @apply flex font-bold;
 }
 
-.ats-mv__sale-period dd {
+.ats-mv__sale-period-desc {
   @apply flex grow text-center font-bold;
   column-gap: 10px;
   font-family: var(--font-ja-alt);
   padding-left: 10px;
 }
 
-.ats-mv__sale-period dd::before {
+.ats-mv__sale-period-desc::before {
   content: '';
   width: 1px;
   background: hsl(var(--bg-primary));
 }
 
 .ats-mv__sale-date {
-  @apply grow;
-  flex: 1;
+  @apply grow grow;
 }
 
 .ats-mv__sale-date-num {
@@ -95,23 +94,18 @@
 }
 
 
-
 /* 搭乗期間 */
 .ats-mv__boarding-period {
+  @apply p-4;
   background: hsla(var(--bg-white)/.9);
   border-radius: 20px;
-  padding: 1rem;
   color: hsl(var(--text-primary));
 }
 
 .ats-mv__boarding-period-title {
+  @apply flex flex-col items-center gap-3 font-bold;
   padding-bottom: .625rem;
   border-bottom: 1px solid hsl(var(--bg-primary));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .75rem;
-  font-weight: bold;
   font-size: 1.125rem;
 }
 
@@ -126,50 +120,42 @@
 }
 
 .ats-mv__boarding-plan {
-  display: flex;
-  justify-content: space-between;
-  padding: .75rem 0.625rem;
-  line-height: 1;
-  flex-direction: column;
-  gap: .5rem;
+  @apply flex justify-between leading-none flex-col gap-2;
+  padding: .75rem .625rem;
 }
 
 .ats-mv__boarding-section {
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
+  @apply flex justify-center gap-2 py-2;
   border: 1px solid hsl(var(--bdr-normal));
-  padding-block: .5rem;
 }
 
 .ats-mv__boarding-depart,
 .ats-mv__boarding-arrive {
-  display: flex;
-  gap: .5rem;
-  align-items: end;
+  @apply flex items-center gap-2;
 }
 
 .ats-mv__boarding-area {
-  font-size: 0.8125rem;
+  font-size: .8125rem;
 }
 
 .ats-mv__boarding-airport {
-  font-weight: bold;
+  @apply font-bold;
   font-size: 1.13125rem;
 }
 
 .ats-mv__boarding-price {
-  text-align: center;
+  @apply text-center;
 }
 
 .ats-mv__boarding-price-num {
+  @apply font-bold;
   font-family: var(--font-en);
   font-weight: bold;
   font-size: 2.5rem;
 }
 
 .ats-mv__boarding-price-label {
-  font-weight: bold;
+  @apply font-bold;
 }
 
 /* md */
@@ -184,8 +170,7 @@
   }
 
   .ats-mv__boarding-period-title {
-    flex-direction: row;
-    gap: 0;
+    @apply flex-row gap-0;
   }
 
   .ats-mv__boarding-period-title dt::after {
@@ -203,22 +188,32 @@
   }
 
   .ats-mv__boarding-plan {
-    flex-direction: row;
-    align-items: end;
-    gap: 0;
+    @apply flex-row items-end gap-0;
   }
 
   .ats-mv__boarding-section {
-    align-items: end;
-    border: none;
-    padding: 0;
+    @apply items-end border-none p-0;
   }
 }
 
 /* lg */
 @media (min-width: theme(--breakpoint-lg)) {
   .ats-mv__container {
+    @apply gap-x-16;
     max-width: 1000px;
+
+  }
+
+  .ats-mv__container-col {
+    @apply col-span-6;
+  }
+
+}
+
+/* xl */
+@media (min-width: theme(--breakpoint-xl)) {
+  .ats-mv__container {
+    @apply px-0;
   }
 
 }

@@ -108,7 +108,7 @@
 .ats-c-plan-card__feature-item {
   @apply leading-none text-xs rounded-full;
   padding: 6px;
-  background: hsl(var(--bg-xlight-indigo));
+  background: hsl(var(--bg-indigo-xlight));
 }
 
 .ats-c-plan-card__city {

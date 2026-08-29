@@ -1,0 +1,35 @@
+<section class="ats-c-sect ats-nav-sales">
+  <div class="ats-l-container">
+    <header class="ats-c-sect__header">
+      <h2 class="ats-c-sect__h">その他のセールも実施中！</h2>
+    </header>
+
+    <div class="ats-c-sect__body">
+      <div class="ats-nav-sales__nav-container js-nav-sales-container">
+        <div class="ats-nav-sales__nav swiper js-nav-sales">
+          <ul class="ats-nav-sales__list swiper-wrapper">
+            <%
+            const navLinks = [
+              { text: '国内航空券', url: '#' },
+              { text: '国内ツアー', url: '#' },
+              { text: '国内ホテル現地発着プラン', url: '#' },
+              { text: '国内レンタカー', url: '#' },
+              { text: '国際航空券', url: '#' },
+              { text: '国際ツアー', url: '#' },
+            ];
+          %>
+            <% navLinks.forEach((link) => { %>
+            <li class="ats-nav-sales__item swiper-slide">
+              <a href="<%= link.url %>" class="ats-nav-sales__link">
+                <%= link.text %>
+              </a>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+        <div class="ats-nav-sales__button-prev"></div>
+        <div class="ats-nav-sales__button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>

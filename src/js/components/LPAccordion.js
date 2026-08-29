@@ -3,9 +3,12 @@ export class LPAccordion {
 
   constructor(rootSelector = '.ats-root') {
     this.root = document.querySelector(rootSelector);
+    this.root = document.querySelector('.ats-root');
+    if (!this.root) return;
+
     this.faq = this.root.querySelector('.js-ats-faq');
 
-    if (!this.root || !this.faq) return;
+    if (!this.faq) return;
 
     this.init();
   }

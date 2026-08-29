@@ -1,4 +1,97 @@
 /* その他のセール */
 .ats-nav-sales {
-  background: hsl();
+  @apply py-12;
+  background: hsl(var(--bg-light-blue));
+}
+
+.ats-nav-sales__nav-container {
+  @apply relative mx-auto;
+  max-width: 960px;
+}
+
+.ats-nav-sales__nav {
+  @apply px-4 overflow-hidden;
+  margin-inline: calc(var(--spacing) * -4);
+}
+
+.ats-nav-sales__list {
+  @apply flex;
+}
+
+
+.ats-nav-sales__item {
+  @apply shrink-0;
+}
+
+.ats-nav-sales__link {
+  @apply block font-bold p-3 rounded-sm;
+  color: hsl(var(--text-primary));
+  background: hsl(var(--bg-white));
+}
+
+.ats-nav-sales__button-prev,
+.ats-nav-sales__button-next {
+  @apply rounded-full place-items-center absolute hidden;
+  --size: 51px;
+  width: var(--size);
+  height: var(--size);
+  background: hsl(var(--bg-white));
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.ats-nav-sales__button-prev {
+  left: 0;
+}
+
+.ats-nav-sales__button-next {
+  right: 0;
+}
+
+.ats-nav-sales__button-prev::before,
+.ats-nav-sales__button-next::before {
+  --size: 24px;
+  content: '';
+  width: var(--size);
+  height: var(--size);
+  background: hsl(var(--bg-primary));
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.ats-nav-sales__button-prev::before {
+  mask-image: var(--ats-icon-arrow-left);
+}
+
+.ats-nav-sales__button-next::before {
+  mask-image: var(--ats-icon-arrow-right);
+}
+
+
+/* md */
+@media (min-width: theme(--breakpoint-md)) {
+  .ats-nav-sales {
+    @apply py-10;
+  }
+
+  .ats-nav-sales__nav-container {
+    @apply px-16;
+  }
+
+  .ats-nav-sales__nav {
+    @apply px-0;
+    margin-inline: 0;
+  }
+
+
+  .ats-nav-sales__link {
+    @apply py-3 px-4;
+  }
+
+  .ats-nav-sales__button-prev,
+  .ats-nav-sales__button-next {
+    @apply grid;
+  }
+
 }

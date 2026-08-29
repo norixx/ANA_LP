@@ -218,7 +218,8 @@
   --bg-accent-orange-dark: var(--orange-dark);
   --bg-white: var(--Mono-0);
   --bg-black: var(--Mono-1300);
-  --bg-xlight-indigo: var(--Indigo-100);
+  --bg-light-blue: var(--Blue-100);
+  --bg-indigo-xlight: var(--Indigo-100);
 
   --bg-tag-members: linear-gradient(to right, hsl(var(--bg-accent-orange)), hsl(var(--bg-accent-orange-dark)));
   --bg-tag-benefit: var(--Yellow-500);
