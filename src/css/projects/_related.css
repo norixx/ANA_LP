@@ -4,9 +4,39 @@
   background: hsl(var(--bg-white));
 }
 
+.ats-related__banners {
+  @apply pb-16 grid gap-6;
+}
+
+.ats-related__banners-label {
+  @apply mb-2 font-bold;
+  font-size: 1.25rem;
+}
+
+.ats-related__banners-img {
+  width: 100%;
+}
+
+.ats-related__subsect {
+  @apply mb-16;
+}
+
+.ats-related__subsect-h {
+  @apply mb-6 font-bold;
+  font-size: 1.25rem;
+}
+
 /* md */
 @media (min-width: theme(--breakpoint-md)) {
   .ats-related {
     @apply py-16;
+  }
+
+  .ats-related__banners-label {
+    font-size: 1.375rem;
+  }
+
+  .ats-related__subsect-h {
+    font-size: 1.75rem;
   }
 }

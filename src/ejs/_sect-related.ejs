@@ -6,36 +6,76 @@
     <div class="ats-related__body">
       <dl class="ats-related__banners">
         <div class="ats-related__banners-item">
-          <dt>2026年7月24日以降の旅は、新しい国内線運賃でもっと柔軟に。</dt>
-          <dd>
-            <a href=""><img src="" alt=""></a>
+          <dt class="ats-related__banners-label">2026年7月24日以降の旅は、新しい国内線運賃でもっと柔軟に。</dt>
+          <dd class="ats-related__banners-desc">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 768px)" srcset="src/img/bn-related-01.webp">
+                <img src="src/img/bn-related-01-sp.webp" alt="" loading="lazy" class="ats-related__banners-img">
+              </picture>
+            </a>
           </dd>
         </div>
         <div class="ats-related__banners-item">
-          <dt>2026年5月18日までの旅は、おトクな早期運賃</dt>
-          <dd>
-            <a href=""><img src="" alt=""></a>
+          <dt class="ats-related__banners-label">2026年5月18日までの旅は、おトクな早期運賃</dt>
+          <dd class="ats-related__banners-desc">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 768px)" srcset="src/img/bn-related-02.webp">
+                <img src="src/img/bn-related-02-sp.webp" alt="" loading="lazy" class="ats-related__banners-img">
+              </picture>
+            </a>
           </dd>
         </div>
         <div class="ats-related__banners-item">
-          <dt>初めての飛行機を楽しもう！</dt>
-          <dd>
-            <a href=""><img src="" alt=""></a>
+          <dt class="ats-related__banners-label">初めての飛行機を楽しもう！</dt>
+          <dd class="ats-related__banners-desc">
+            <a href="#">
+              <picture>
+                <source media="(min-width: 768px)" srcset="src/img/bn-related-03.webp">
+                <img src="src/img/bn-related-03-sp.webp" alt="" loading="lazy" class="ats-related__banners-img">
+              </picture>
+            </a>
           </dd>
         </div>
       </dl>
 
-      <div class="ats-related__pokemon">
+      <div class="ats-related__campaign">
         <img src="" alt="">
       </div>
+
       <section class="ats-related__subsect">
         <h3 class="ats-related__subsect-h">
           おすすめ情報
         </h3>
         <div class="ats-related__subsect-body">
+          <ul class="ats-related__recommend-list">
+            <% const recommendLinks = [
+              { title: '旅先での予定もANAで！', url: '#', img: { sp: 'src/img/bn-related-01-sp.webp', pc: 'src/img/bn-related-01.webp'} },
+              { title: '国内航空券', url: '#', img: { sp: 'src/img/bn-related-01-sp.webp', pc: 'src/img/bn-related-01.webp'} },
+              ];
+            %>
+            <li class="ats-related__recommend-item">
+              <div class="ats-related__recommend-card">
+                <a href="#">
+                  <div class="ats-related__recommend-card-img">
+                    <picture>
+                      <source media="(min-width: 768px)" srcset="src/img/bn-related-01.webp">
+                      <img src="src/img/bn-related-01-sp.webp" alt="" loading="lazy" class="ats-related__banners-img">
+                    </picture>
+                  </div>
+                  <div class="ats-related__recommend-card-body">
+                    <div class="ats-related__recommend-card-title">旅先での予定もANAで！ </div>
+                    <div class="ats-related__recommend-card-desc">マイルが貯まる！ANAのホテル・レンタカー・アクティビティ・ゴルフ</div>
+                  </div>
+                </a>
+              </div>
+            </li>
 
+          </ul>
         </div>
       </section>
+
       <section class="ats-related__subsect">
         <h3 class="ats-related__subsect-h">
           おトク情報をいち早くお届け！
